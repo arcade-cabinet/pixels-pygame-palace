@@ -1,19 +1,19 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { useToast } from '@/hooks/use-toast';
-import { AnimatePresence, motion } from 'framer-motion';
 import {
-  ArrowRight,
-  CheckCircle,
-  Code,
-  Copy,
   Lightbulb,
-  Sparkles,
+  ArrowRight,
   Trophy,
   X,
+  Copy,
+  Code,
+  CheckCircle,
+  Sparkles,
   Zap,
 } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useToast } from '@/hooks/use-toast';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface FloatingFeedbackProps {
   step: {
@@ -125,9 +125,7 @@ export default function FloatingFeedback({
                       : { rotate: [0, -10, 10, -10, 0] }
                   }
                   transition={
-                    showNext
-                      ? { duration: 0.5 }
-                      : { duration: 2, repeat: Number.POSITIVE_INFINITY, delay: 1 }
+                    showNext ? { duration: 0.5 } : { duration: 2, repeat: Infinity, delay: 1 }
                   }
                   className="relative"
                 >

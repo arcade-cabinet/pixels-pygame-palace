@@ -1,4 +1,4 @@
-import type { PygameComponent } from '../types';
+import { PygameComponent } from '../types';
 
 export const shootingComponent: PygameComponent = {
   id: 'shooting',

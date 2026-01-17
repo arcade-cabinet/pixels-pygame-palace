@@ -2,14 +2,14 @@
 // Re-exports all templates from modular files
 
 // Import types
-import { GameSettings, GameTemplate, TemplateComponent } from './pygame-template-types';
+import { GameTemplate, TemplateComponent, GameSettings } from './pygame-template-types';
 
-import { breakoutTemplate } from './pygame-template-breakout';
-import { collectingTemplate } from './pygame-template-collecting';
 // Import individual templates
 import { platformerTemplate } from './pygame-template-platformer';
 import { pongTemplate } from './pygame-template-pong';
 import { shooterTemplate } from './pygame-template-shooter';
+import { breakoutTemplate } from './pygame-template-breakout';
+import { collectingTemplate } from './pygame-template-collecting';
 
 // Re-export types
 export { GameTemplate, TemplateComponent, GameSettings };

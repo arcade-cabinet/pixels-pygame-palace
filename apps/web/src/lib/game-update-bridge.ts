@@ -1,4 +1,4 @@
-import type { GameConfig } from '@professor-pixel/shared-types';
+import type { GameConfig, Entity, ComponentChoice } from '@professor-pixel/types';
 
 // Patch operations for incremental updates
 export interface GamePatch {
@@ -18,9 +18,9 @@ export interface GamePatch {
 // Game update bridge for real-time sync
 export class GameUpdateBridge {
   private pyodide: any;
-  private currentVersion = 0;
+  private currentVersion: number = 0;
   private pendingPatches: GamePatch[] = [];
-  private isInitialized = false;
+  private isInitialized: boolean = false;
   private updateInterval: NodeJS.Timer | null = null;
   private lastConfig: GameConfig | null = null;
 
@@ -239,7 +239,7 @@ print("Game Update Bridge initialized in Python")
   }
 
   // Start auto-sync with interval
-  startAutoSync(intervalMs = 100): void {
+  startAutoSync(intervalMs: number = 100): void {
     if (this.updateInterval) {
       clearInterval(this.updateInterval as NodeJS.Timeout);
     }

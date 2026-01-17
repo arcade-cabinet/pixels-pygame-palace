@@ -1,5 +1,5 @@
 // PyGame Ball Component
-import { type PyGameComponent, hexToRgb } from './pygame-component-types';
+import { PyGameComponent, hexToRgb } from './pygame-component-types';
 
 // Define BallProperties locally to avoid import issues
 interface BallProperties {

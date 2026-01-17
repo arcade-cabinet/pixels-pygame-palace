@@ -1,4 +1,4 @@
-import type { BackgroundAsset } from './asset-types';
+import { BackgroundAsset } from './asset-types';
 
 export const kenneyBackgrounds: BackgroundAsset[] = [
   {

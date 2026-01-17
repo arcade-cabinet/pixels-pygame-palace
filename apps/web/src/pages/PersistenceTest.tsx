@@ -1,18 +1,18 @@
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import {
-  clearAllData,
-  clearSessionState,
-  clearWizardState,
-  getCookie,
-  loadSessionState,
-  loadUserPreferences,
+  saveWizardState,
   loadWizardState,
   saveSessionState,
+  loadSessionState,
   saveUserPreferences,
-  saveWizardState,
+  loadUserPreferences,
+  clearWizardState,
+  clearSessionState,
+  clearAllData,
   setCookie,
+  getCookie,
 } from '@/lib/persistence';
-import { useEffect, useState } from 'react';
 
 export default function PersistenceTest() {
   const [wizardState, setWizardState] = useState<any>(null);

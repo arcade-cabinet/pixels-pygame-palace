@@ -1,19 +1,15 @@
-import {
-  type PersistedWizardState,
-  loadWizardState,
-  saveWizardStateDebounced,
-} from '@/lib/persistence';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { ANIMATIONS, INITIAL_NODE_ID, STYLES, WIZARD_FLOW_PATH } from './wizard-constants';
-import type { DialogueState, SessionActions, WizardNode } from './wizard-types';
+import { WizardNode, DialogueState, SessionActions } from './wizard-types';
 import {
   getCurrentText,
-  loadWizardFlow,
-  shouldShowContinue,
   shouldShowOptions,
+  shouldShowContinue,
   updateSessionActionsForOption,
+  loadWizardFlow,
 } from './wizard-utils';
+import { WIZARD_FLOW_PATH, INITIAL_NODE_ID, STYLES, ANIMATIONS } from './wizard-constants';
+import { saveWizardStateDebounced, loadWizardState, PersistedWizardState } from '@/lib/persistence';
 
 interface UseWizardDialogueProps {
   initialNodeId?: string;

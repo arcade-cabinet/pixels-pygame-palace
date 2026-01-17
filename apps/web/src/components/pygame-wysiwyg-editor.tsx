@@ -1,17 +1,18 @@
-import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
-import { Switch } from '@/components/ui/switch';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { cn } from '@/lib/utils';
-import { Code, Eye, Grid3x3, Pause, Play, RotateCw } from 'lucide-react';
-import { useCallback, useState } from 'react';
+import { useState, useCallback } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import { Play, Pause, RotateCw, Code, Eye, Grid3x3 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Switch } from '@/components/ui/switch';
+import { Label } from '@/components/ui/label';
+import { cn } from '@/lib/utils';
 
 import PygameEditorCanvas from './pygame-editor-canvas';
-import PygameEditorCodePanel from './pygame-editor-code-panel';
 import PygameEditorPalette from './pygame-editor-palette';
 import PygameEditorProperties from './pygame-editor-properties';
+import PygameEditorCodePanel from './pygame-editor-code-panel';
 
 export interface PlacedComponent {
   id: string;

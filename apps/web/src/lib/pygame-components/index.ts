@@ -1,15 +1,15 @@
 // Pygame Component Library Index
 // This exports all components organized by category
 
-import { meleeComponent } from './combat/melee';
-import { shootingComponent } from './combat/shooting';
 // Import all components
 import { jumpComponent } from './movement/jump';
 import { walkComponent } from './movement/walk';
+import { shootingComponent } from './combat/shooting';
+import { meleeComponent } from './combat/melee';
 import { healthComponent } from './ui/health';
 import { scoreComponent } from './ui/score';
-import { collisionComponent } from './world/collision';
 import { gravityComponent } from './world/gravity';
+import { collisionComponent } from './world/collision';
 
 // Export component types
 export type { PygameComponent, ComponentSelection } from './types';

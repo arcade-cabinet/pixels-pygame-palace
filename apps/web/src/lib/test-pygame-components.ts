@@ -1,5 +1,5 @@
 // Test file for the Pygame Component System
-import { getAllComponents, getComponentById, pygameComponents } from './pygame-components';
+import { pygameComponents, getAllComponents, getComponentById } from './pygame-components';
 
 // Test 1: Verify all components are loaded
 function testComponentLoading() {

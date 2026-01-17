@@ -383,7 +383,7 @@ class ConsoleLogger {
     return filtered;
   }
 
-  getRecentLogs(minutes = 5): LogEntry[] {
+  getRecentLogs(minutes: number = 5): LogEntry[] {
     const cutoff = new Date(Date.now() - minutes * 60 * 1000);
     return this.logs.filter((log) => log.timestamp > cutoff);
   }

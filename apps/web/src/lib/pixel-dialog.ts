@@ -1,4 +1,4 @@
-import type { ConversationMessage, UserProfile } from '@professor-pixel/shared-types';
+import type { ConversationMessage, UserProfile } from '@shared/schema';
 
 export type DialogStep = {
   pixel?: string;

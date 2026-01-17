@@ -160,7 +160,7 @@ class PygameRect {
 
 // Enhanced Sound class
 class PygameSound {
-  private volume = 1.0;
+  private volume: number = 1.0;
   private filename: string;
 
   constructor(filename: string) {
@@ -183,10 +183,10 @@ class PygameSound {
 
 // Clock class for frame timing
 class PygameClock {
-  private lastTick = 0;
-  private targetFPS = 60;
+  private lastTick: number = 0;
+  private targetFPS: number = 60;
 
-  tick(fps = 60): number {
+  tick(fps: number = 60): number {
     this.targetFPS = fps;
     const now = performance.now();
     const deltaTime = now - this.lastTick;
@@ -213,14 +213,14 @@ class PygameFont {
   private size: number;
   private fontFamily: string;
 
-  constructor(fontname: string | null = null, size = 36) {
+  constructor(fontname: string | null = null, size: number = 36) {
     this.size = size;
     this.fontFamily = fontname || 'Arial, sans-serif';
   }
 
   render(
     text: string,
-    antialias = true,
+    antialias: boolean = true,
     color: [number, number, number] = [255, 255, 255],
   ): RenderingSurface {
     // Calculate approximate text dimensions
@@ -331,7 +331,7 @@ export function createPygameEnvironment() {
         color: [number, number, number],
         start: [number, number],
         end: [number, number],
-        width = 1,
+        width: number = 1,
       ) => {
         if (surface.isMainSurface && canvasContext) {
           const rgbColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
@@ -382,7 +382,7 @@ export function createPygameEnvironment() {
       Sound: PygameSound,
       music: {
         load: (file: string) => console.log(`🎵 Loading music: ${file}`),
-        play: (loops = -1) => console.log('🎵 Playing music'),
+        play: (loops: number = -1) => console.log('🎵 Playing music'),
         stop: () => console.log('🎵 Music stopped'),
         set_volume: (vol: number) => console.log(`🎵 Music volume: ${vol}`),
       },
@@ -408,7 +408,7 @@ export function createPygameEnvironment() {
     },
     Surface: RenderingSurface,
     Rect: PygameRect,
-    Color: (r: number, g = 0, b = 0, a = 255) => [r, g, b, a],
+    Color: (r: number, g: number = 0, b: number = 0, a: number = 255) => [r, g, b, a],
     image: {
       load: (filename: string) => {
         console.log(`📷 Loading image: ${filename}`);
@@ -640,7 +640,7 @@ export const pygameShim = {
     init() {
       return true;
     },
-    Font(fontname: string | null = null, size = 36) {
+    Font(fontname: string | null = null, size: number = 36) {
       return new PygameFont(fontname, size);
     },
     get_default_font() {
@@ -698,7 +698,7 @@ export const pygameShim = {
       load(filename: string) {
         console.log(`🎵 Loading music: ${filename}`);
       },
-      play(loops = 0) {
+      play(loops: number = 0) {
         console.log(`🎵 Playing music (loops: ${loops})`);
       },
       stop() {
@@ -749,7 +749,7 @@ export const pygameShim = {
       color: any,
       start: [number, number],
       end: [number, number],
-      width = 1,
+      width: number = 1,
     ) {
       if (surface.isMainSurface && isRenderingActive) {
         const cssColor = parseColor(color);
@@ -811,7 +811,7 @@ export const pygameShim = {
       console.log(`🔄 Rotating surface by ${angle} degrees (placeholder)`);
       return surface;
     },
-    flip(surface: RenderingSurface, xbool = false, ybool = false) {
+    flip(surface: RenderingSurface, xbool: boolean = false, ybool: boolean = false) {
       // Return same surface for now
       console.log(`🔄 Flipping surface (x:${xbool}, y:${ybool}) (placeholder)`);
       return surface;
@@ -831,7 +831,7 @@ export const pygameShim = {
   },
 
   // Rect constructor
-  Rect(x = 0, y = 0, width = 0, height = 0) {
+  Rect(x: number = 0, y: number = 0, width: number = 0, height: number = 0) {
     return new PygameRect(x, y, width, height);
   },
 };
@@ -1475,9 +1475,9 @@ export function simulatePygame(code: string): SimulationResult {
             /circle\([^,]+,\s*([^,]+),\s*\(([^,]+),\s*([^)]+)\),\s*([^)]+)/,
           );
           if (match) {
-            const x = Math.max(0, Math.min(800, Number.parseFloat(match[2]) || 400));
-            const y = Math.max(0, Math.min(600, Number.parseFloat(match[3]) || 300));
-            const radius = Math.max(1, Math.min(100, Number.parseFloat(match[4]) || 25));
+            const x = Math.max(0, Math.min(800, parseFloat(match[2]) || 400));
+            const y = Math.max(0, Math.min(600, parseFloat(match[3]) || 300));
+            const radius = Math.max(1, Math.min(100, parseFloat(match[4]) || 25));
 
             result.objects.push({
               type: 'circle',
@@ -1518,9 +1518,9 @@ export function simulatePygame(code: string): SimulationResult {
             /rect\([^,]+,\s*([^,]+),\s*\(([^,]+),\s*([^,]+),\s*([^,]+),\s*([^)]+)\)/,
           );
           if (rectMatch) {
-            const x = Math.max(0, Math.min(800, Number.parseFloat(rectMatch[2]) || 300));
-            const y = Math.max(0, Math.min(600, Number.parseFloat(rectMatch[3]) || 200));
-            const width = Math.max(1, Math.min(200, Number.parseFloat(rectMatch[4]) || 50));
+            const x = Math.max(0, Math.min(800, parseFloat(rectMatch[2]) || 300));
+            const y = Math.max(0, Math.min(600, parseFloat(rectMatch[3]) || 200));
+            const width = Math.max(1, Math.min(200, parseFloat(rectMatch[4]) || 50));
 
             result.objects.push({
               type: 'rect',

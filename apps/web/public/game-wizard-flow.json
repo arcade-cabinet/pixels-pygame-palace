@@ -38,7 +38,7 @@
         }
       ]
     },
-
+    
     "dungeonIntro": {
       "id": "dungeonIntro",
       "speaker": "Pixel",
@@ -46,7 +46,7 @@
       "followUp": "We'll build your dungeon floor by floor, room by room!",
       "action": "transitionToSpecializedFlow"
     },
-
+    
     "platformerIntro": {
       "id": "platformerIntro",
       "speaker": "Pixel",
@@ -54,7 +54,7 @@
       "followUp": "Let's build this scene by scene - first up: your title screen!",
       "action": "transitionToSpecializedFlow"
     },
-
+    
     "spaceIntro": {
       "id": "spaceIntro",
       "speaker": "Pixel",
@@ -62,7 +62,7 @@
       "followUp": "We'll build an epic galactic battle scene by scene!",
       "action": "transitionToSpecializedFlow"
     },
-
+    
     "puzzleIntro": {
       "id": "puzzleIntro",
       "speaker": "Pixel",
@@ -70,7 +70,7 @@
       "followUp": "Let's create your brain-teasing challenge!",
       "action": "transitionToSpecializedFlow"
     },
-
+    
     "racingIntro": {
       "id": "racingIntro",
       "speaker": "Pixel",
@@ -78,7 +78,7 @@
       "followUp": "Let's build something FAST - track by track!",
       "action": "transitionToSpecializedFlow"
     },
-
+    
     "rpgIntro": {
       "id": "rpgIntro",
       "speaker": "Pixel",
@@ -86,14 +86,14 @@
       "followUp": "Let's craft your epic quest from start to finish!",
       "action": "transitionToSpecializedFlow"
     },
-
+    
     "platformerCharacterSelect": {
       "id": "platformerCharacterSelect",
       "speaker": "Pixel",
       "text": "Check out these awesome characters! They're all ready to jump into action!",
       "followUp": "Which one speaks to you?",
       "action": "showAssetBrowser",
-      "actionParams": {
+      "actionParams": { 
         "type": "sprite",
         "filter": "characters",
         "tags": ["player", "hero"],
@@ -135,13 +135,13 @@
         }
       ]
     },
-
+    
     "spaceCharacterSelect": {
       "id": "spaceCharacterSelect",
       "speaker": "Pixel",
       "text": "Here are our space heroes! Each one's got their own special thing going on!",
       "action": "showAssetBrowser",
-      "actionParams": {
+      "actionParams": { 
         "type": "sprite",
         "filter": "characters",
         "tags": ["sci-fi", "space", "robot"],
@@ -169,7 +169,7 @@
         }
       ]
     },
-
+    
     "platformerMovementType": {
       "id": "platformerMovementType",
       "speaker": "Pixel",
@@ -183,7 +183,7 @@
           "next": "platformerEnemyChoice",
           "setVariable": { "movementType": "classic" },
           "action": "setComponent",
-          "actionParams": {
+          "actionParams": { 
             "component": "sprite",
             "properties": {
               "velocityX": 5,
@@ -198,7 +198,7 @@
           "next": "platformerEnemyChoice",
           "setVariable": { "movementType": "doubleJump" },
           "action": "setComponent",
-          "actionParams": {
+          "actionParams": { 
             "component": "sprite",
             "properties": {
               "velocityX": 5,
@@ -214,7 +214,7 @@
           "next": "platformerEnemyChoice",
           "setVariable": { "movementType": "wallJump" },
           "action": "setComponent",
-          "actionParams": {
+          "actionParams": { 
             "component": "sprite",
             "properties": {
               "velocityX": 5,
@@ -227,7 +227,7 @@
         }
       ]
     },
-
+    
     "spaceMovementType": {
       "id": "spaceMovementType",
       "speaker": "Pixel",
@@ -240,7 +240,7 @@
           "next": "spaceEnemyChoice",
           "setVariable": { "movementType": "freeFloat" },
           "action": "setComponent",
-          "actionParams": {
+          "actionParams": { 
             "component": "sprite",
             "properties": {
               "movementType": "free",
@@ -254,7 +254,7 @@
           "next": "spaceEnemyChoice",
           "setVariable": { "movementType": "vertical" },
           "action": "setComponent",
-          "actionParams": {
+          "actionParams": { 
             "component": "sprite",
             "properties": {
               "movementType": "vertical",
@@ -265,7 +265,7 @@
         }
       ]
     },
-
+    
     "platformerEnemyChoice": {
       "id": "platformerEnemyChoice",
       "speaker": "Pixel",
@@ -289,7 +289,7 @@
         }
       ]
     },
-
+    
     "spaceEnemyChoice": {
       "id": "spaceEnemyChoice",
       "speaker": "Pixel",
@@ -314,13 +314,13 @@
         }
       ]
     },
-
+    
     "platformerEnemySelect": {
       "id": "platformerEnemySelect",
       "speaker": "Pixel",
       "text": "Let's pick some troublemakers for your game! They all act differently!",
       "action": "showAssetBrowser",
-      "actionParams": {
+      "actionParams": { 
         "type": "sprite",
         "filter": "enemies",
         "gameType": "platformer"
@@ -355,20 +355,20 @@
           "text": "Throw them all in! I want chaos!",
           "next": "platformerEnemyBehavior",
           "action": "selectMultipleAssets",
-          "actionParams": {
+          "actionParams": { 
             "assetIds": ["ghost-floating", "spikey-hazard", "walker-enemy"],
             "role": "enemy"
           }
         }
       ]
     },
-
+    
     "spaceEnemySelect": {
       "id": "spaceEnemySelect",
       "speaker": "Pixel",
       "text": "Space enemies incoming! Choose your cosmic threats!",
       "action": "showAssetBrowser",
-      "actionParams": {
+      "actionParams": { 
         "type": "sprite",
         "filter": "enemies",
         "tags": ["space", "alien", "flying"],
@@ -389,14 +389,14 @@
         }
       ]
     },
-
+    
     "platformerEnemyBehavior": {
       "id": "platformerEnemyBehavior",
       "speaker": "Pixel",
       "text": "How should these troublemakers act? This is what makes your game easy or super hard!",
       "followUp": "Think about what would be fun to dodge!",
       "action": "showLivePreview",
-      "actionParams": {
+      "actionParams": { 
         "showPlayer": true,
         "showEnemies": true,
         "testInteractions": true
@@ -422,13 +422,13 @@
         }
       ]
     },
-
+    
     "spaceEnemyBehavior": {
       "id": "spaceEnemyBehavior",
       "speaker": "Pixel",
       "text": "How should space enemies attack?",
       "action": "showLivePreview",
-      "actionParams": {
+      "actionParams": { 
         "showPlayer": true,
         "showEnemies": true,
         "testCombat": true
@@ -448,14 +448,14 @@
         }
       ]
     },
-
+    
     "platformerCollectibleChoice": {
       "id": "platformerCollectibleChoice",
       "speaker": "Pixel",
       "text": "Ooh, the shiny stuff! What treasures should players hunt for?",
       "followUp": "Everyone loves collecting things!",
       "action": "showLivePreview",
-      "actionParams": {
+      "actionParams": { 
         "showPlayer": true,
         "showEnemies": true,
         "showPlatforms": true
@@ -472,13 +472,13 @@
         }
       ]
     },
-
+    
     "platformerCollectibleSelect": {
       "id": "platformerCollectibleSelect",
       "speaker": "Pixel",
       "text": "What kind of shiny stuff should we scatter around?",
       "action": "showAssetBrowser",
-      "actionParams": {
+      "actionParams": { 
         "type": "sprite",
         "filter": "items",
         "gameType": "platformer"
@@ -494,7 +494,7 @@
           "text": "Sparkly gems! Everyone loves gems!",
           "next": "platformerCollectiblePurpose",
           "action": "selectMultipleAssets",
-          "actionParams": {
+          "actionParams": { 
             "assetIds": ["gem-blue", "gem-red"],
             "role": "collectible"
           }
@@ -509,7 +509,7 @@
           "text": "Keys that unlock secret doors!",
           "next": "platformerCollectiblePurpose",
           "action": "selectMultipleAssets",
-          "actionParams": {
+          "actionParams": { 
             "assetIds": ["key-green", "key-red"],
             "role": "collectible"
           }
@@ -518,20 +518,20 @@
           "text": "A little bit of everything!",
           "next": "platformerCollectiblePurpose",
           "action": "selectMultipleAssets",
-          "actionParams": {
+          "actionParams": { 
             "assetIds": ["gem-blue", "coin-gold", "key-green"],
             "role": "collectible"
           }
         }
       ]
     },
-
+    
     "platformerCollectiblePurpose": {
       "id": "platformerCollectiblePurpose",
       "speaker": "Pixel",
       "text": "So what's the reward for grabbing all this stuff?",
       "action": "showLivePreview",
-      "actionParams": {
+      "actionParams": { 
         "showPlayer": true,
         "showCollectibles": true,
         "testCollection": true
@@ -555,7 +555,7 @@
         }
       ]
     },
-
+    
     "platformerPowerUpSelect": {
       "id": "platformerPowerUpSelect",
       "speaker": "Pixel",
@@ -581,7 +581,7 @@
         }
       ]
     },
-
+    
     "spaceWeaponChoice": {
       "id": "spaceWeaponChoice",
       "speaker": "Pixel",
@@ -607,7 +607,7 @@
         }
       ]
     },
-
+    
     "spaceCollectibleChoice": {
       "id": "spaceCollectibleChoice",
       "speaker": "Pixel",
@@ -624,7 +624,7 @@
         }
       ]
     },
-
+    
     "spaceCollectibleSelect": {
       "id": "spaceCollectibleSelect",
       "speaker": "Pixel",
@@ -650,7 +650,7 @@
         }
       ]
     },
-
+    
     "platformerGoalSetup": {
       "id": "platformerGoalSetup",
       "speaker": "Pixel",
@@ -685,7 +685,7 @@
         }
       ]
     },
-
+    
     "spaceGoalSetup": {
       "id": "spaceGoalSetup",
       "speaker": "Pixel",
@@ -709,7 +709,7 @@
         }
       ]
     },
-
+    
     "spaceBossSetup": {
       "id": "spaceBossSetup",
       "speaker": "Pixel",
@@ -729,7 +729,7 @@
         }
       ]
     },
-
+    
     "platformerLevelDesign": {
       "id": "platformerLevelDesign",
       "speaker": "Pixel",
@@ -755,7 +755,7 @@
         }
       ]
     },
-
+    
     "spaceDifficultySetup": {
       "id": "spaceDifficultySetup",
       "speaker": "Pixel",
@@ -781,13 +781,13 @@
         }
       ]
     },
-
+    
     "platformerBackgroundChoice": {
       "id": "platformerBackgroundChoice",
       "speaker": "Pixel",
       "text": "Where's all this action happening? Pick your world!",
       "action": "showAssetBrowser",
-      "actionParams": {
+      "actionParams": { 
         "type": "background",
         "gameType": "platformer"
       },
@@ -823,13 +823,13 @@
         }
       ]
     },
-
+    
     "spaceBackgroundChoice": {
       "id": "spaceBackgroundChoice",
       "speaker": "Pixel",
       "text": "Which part of space are we battling in?",
       "action": "showAssetBrowser",
-      "actionParams": {
+      "actionParams": { 
         "type": "background",
         "tags": ["space", "cosmic"],
         "gameType": "space"
@@ -855,7 +855,7 @@
         }
       ]
     },
-
+    
     "platformerMusicChoice": {
       "id": "platformerMusicChoice",
       "speaker": "Pixel",
@@ -886,7 +886,7 @@
         }
       ]
     },
-
+    
     "spaceMusicChoice": {
       "id": "spaceMusicChoice",
       "speaker": "Pixel",
@@ -917,14 +917,14 @@
         }
       ]
     },
-
+    
     "gamePreview": {
       "id": "gamePreview",
       "speaker": "Pixel",
       "text": "🎉 WOW! Look what we made together! This is YOUR game!",
       "followUp": "Ready to play it? Just hit play and use the arrow keys!",
       "action": "showFullGamePreview",
-      "actionParams": {
+      "actionParams": { 
         "playable": true,
         "showControls": true,
         "generateCode": true
@@ -945,7 +945,7 @@
         }
       ]
     },
-
+    
     "gameTestPhase": {
       "id": "gameTestPhase",
       "speaker": "Pixel",
@@ -972,11 +972,11 @@
         }
       ]
     },
-
+    
     "editChoice": {
       "id": "editChoice",
       "speaker": "Pixel",
-      "text": "Sure thing! What's not quite right?",
+      "text": "Sure thing! What's not quite right?"
       "options": [
         {
           "text": "Change the character",
@@ -1014,7 +1014,7 @@
         }
       ]
     },
-
+    
     "advancedFeatures": {
       "id": "advancedFeatures",
       "speaker": "Pixel",
@@ -1038,7 +1038,7 @@
         }
       ]
     },
-
+    
     "levelBuilder": {
       "id": "levelBuilder",
       "speaker": "Pixel",
@@ -1065,13 +1065,13 @@
         }
       ]
     },
-
+    
     "scoreSystem": {
       "id": "scoreSystem",
       "speaker": "Pixel",
       "text": "High scores make players want to beat their best! Let's add a scoring system!",
       "action": "addComponent",
-      "actionParams": {
+      "actionParams": { 
         "component": "scoreText",
         "properties": {
           "x": 10,
@@ -1099,7 +1099,7 @@
         }
       ]
     },
-
+    
     "effectsChoice": {
       "id": "effectsChoice",
       "speaker": "Pixel",
@@ -1127,20 +1127,20 @@
           "text": "All of them!",
           "next": "gamePreview",
           "action": "addMultipleEffects",
-          "actionParams": {
+          "actionParams": { 
             "effects": ["particleEffect", "screenShake", "trail"]
           }
         }
       ]
     },
-
+    
     "codeGeneration": {
       "id": "codeGeneration",
       "speaker": "Pixel",
       "text": "Here's your complete Python code! This is real PyGame code that you can run!",
       "followUp": "You can copy this code, modify it, and make it even more awesome!",
       "action": "generateCode",
-      "actionParams": {
+      "actionParams": { 
         "format": "pygame",
         "includeComments": true,
         "educational": true
@@ -1162,7 +1162,7 @@
         }
       ]
     },
-
+    
     "codeExplanation": {
       "id": "codeExplanation",
       "speaker": "Pixel",
@@ -1186,7 +1186,7 @@
         }
       ]
     },
-
+    
     "codeDeepDive": {
       "id": "codeDeepDive",
       "speaker": "Pixel",
@@ -1216,7 +1216,7 @@
         }
       ]
     },
-
+    
     "exportOptions": {
       "id": "exportOptions",
       "speaker": "Pixel",
@@ -1241,14 +1241,14 @@
         }
       ]
     },
-
+    
     "unlockFullEditor": {
       "id": "unlockFullEditor",
       "speaker": "Pixel",
       "text": "🎉 You're ready for the full WYSIWYG editor! This is where you can have complete control!",
       "followUp": "You can drag components, edit properties in real-time, add custom logic, and see your Python code generate live!",
       "action": "openWYSIWYGEditor",
-      "actionParams": {
+      "actionParams": { 
         "preloadGame": true,
         "tutorialMode": true
       },
@@ -1259,7 +1259,7 @@
         }
       ]
     },
-
+    
     "puzzleMatch3Setup": {
       "id": "puzzleMatch3Setup",
       "speaker": "Pixel",
@@ -1286,7 +1286,7 @@
         }
       ]
     },
-
+    
     "puzzleSokobanSetup": {
       "id": "puzzleSokobanSetup",
       "speaker": "Pixel",
@@ -1306,7 +1306,7 @@
         }
       ]
     },
-
+    
     "puzzlePhysicsSetup": {
       "id": "puzzlePhysicsSetup",
       "speaker": "Pixel",
@@ -1326,7 +1326,7 @@
         }
       ]
     },
-
+    
     "puzzleRulesSetup": {
       "id": "puzzleRulesSetup",
       "speaker": "Pixel",
@@ -1352,7 +1352,7 @@
         }
       ]
     },
-
+    
     "puzzleDifficultySetup": {
       "id": "puzzleDifficultySetup",
       "speaker": "Pixel",
@@ -1378,7 +1378,7 @@
         }
       ]
     },
-
+    
     "racingTopDownSetup": {
       "id": "racingTopDownSetup",
       "speaker": "Pixel",
@@ -1404,7 +1404,7 @@
         }
       ]
     },
-
+    
     "racingSideScrollSetup": {
       "id": "racingSideScrollSetup",
       "speaker": "Pixel",
@@ -1424,7 +1424,7 @@
         }
       ]
     },
-
+    
     "racingTrackSetup": {
       "id": "racingTrackSetup",
       "speaker": "Pixel",
@@ -1450,7 +1450,7 @@
         }
       ]
     },
-
+    
     "racingObstacleSetup": {
       "id": "racingObstacleSetup",
       "speaker": "Pixel",
@@ -1476,7 +1476,7 @@
         }
       ]
     },
-
+    
     "racingOpponentSetup": {
       "id": "racingOpponentSetup",
       "speaker": "Pixel",
@@ -1496,7 +1496,7 @@
         }
       ]
     },
-
+    
     "racingPowerUpsSetup": {
       "id": "racingPowerUpsSetup",
       "speaker": "Pixel",
@@ -1521,7 +1521,7 @@
         }
       ]
     },
-
+    
     "rpgCharacterSelect": {
       "id": "rpgCharacterSelect",
       "speaker": "Pixel",
@@ -1534,7 +1534,7 @@
         }
       },
       "action": "showAssetBrowser",
-      "actionParams": {
+      "actionParams": { 
         "type": "sprite",
         "filter": "characters",
         "gameType": "rpg"
@@ -1560,7 +1560,7 @@
         }
       ]
     },
-
+    
     "rpgWorldSetup": {
       "id": "rpgWorldSetup",
       "speaker": "Pixel",
@@ -1586,7 +1586,7 @@
         }
       ]
     },
-
+    
     "rpgQuestSetup": {
       "id": "rpgQuestSetup",
       "speaker": "Pixel",
@@ -1612,7 +1612,7 @@
         }
       ]
     },
-
+    
     "rpgEnemySetup": {
       "id": "rpgEnemySetup",
       "speaker": "Pixel",
@@ -1638,7 +1638,7 @@
         }
       ]
     },
-
+    
     "rpgCombatSetup": {
       "id": "rpgCombatSetup",
       "speaker": "Pixel",
@@ -1658,7 +1658,7 @@
         }
       ]
     },
-
+    
     "rpgItemSetup": {
       "id": "rpgItemSetup",
       "speaker": "Pixel",
@@ -1684,7 +1684,7 @@
         }
       ]
     },
-
+    
     "levelDesignWizard": {
       "id": "levelDesignWizard",
       "speaker": "Pixel",
@@ -1704,18 +1704,18 @@
         }
       ]
     },
-
+    
     "codeEditor": {
       "id": "codeEditor",
       "speaker": "Pixel",
       "text": "Here's your code in the editor! You can modify it and see changes live!",
       "action": "openCodeEditor",
-      "actionParams": {
+      "actionParams": { 
         "syntax": "python",
         "livePreview": true
       }
     },
-
+    
     "platformerHazardSelect": {
       "id": "platformerHazardSelect",
       "speaker": "Pixel",
@@ -1741,7 +1741,7 @@
         }
       ]
     },
-
+    
     "spaceHazardSelect": {
       "id": "spaceHazardSelect",
       "speaker": "Pixel",

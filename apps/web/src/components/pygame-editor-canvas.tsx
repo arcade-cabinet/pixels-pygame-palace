@@ -1,12 +1,12 @@
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { getComponentById } from '@/lib/pygame-components';
-import { flushFrameBuffer, setCanvasContext } from '@/lib/pygame-simulation';
-import { cn } from '@/lib/utils';
-import { Trash2 } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useDrop } from 'react-dnd';
-import type { PlacedComponent } from './pygame-wysiwyg-editor';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Trash2, Move } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { PlacedComponent } from './pygame-wysiwyg-editor';
+import { getComponentById } from '@/lib/pygame-components';
+import { setCanvasContext, flushFrameBuffer } from '@/lib/pygame-simulation';
 
 interface PygameEditorCanvasProps {
   components: PlacedComponent[];

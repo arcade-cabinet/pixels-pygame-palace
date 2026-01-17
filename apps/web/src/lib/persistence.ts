@@ -68,7 +68,7 @@ function debounce<T extends (...args: any[]) => any>(
 ): (...args: Parameters<T>) => void {
   let timeoutId: NodeJS.Timeout | null = null;
 
-  return (...args: Parameters<T>) => {
+  return function (...args: Parameters<T>) {
     if (timeoutId) {
       clearTimeout(timeoutId);
     }

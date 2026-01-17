@@ -1,21 +1,21 @@
-import { generateTestCode } from '@/components/pygame-code-generator';
-import PygameLivePreview, { type GameChoice } from '@/components/pygame-live-preview';
+import { useState, useEffect } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import WizardWithPreview from '@/components/wizard-with-preview';
 import {
-  AlertCircle,
-  CheckCircle,
-  Code,
   FlaskConical,
   Gamepad2,
+  Code,
   Play,
+  AlertCircle,
+  CheckCircle,
   Sparkles,
 } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import WizardWithPreview from '@/components/wizard-with-preview';
+import PygameLivePreview, { GameChoice } from '@/components/pygame-live-preview';
+import { generateTestCode } from '@/components/pygame-code-generator';
 
 declare global {
   interface Window {

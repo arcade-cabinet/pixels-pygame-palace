@@ -1,5 +1,5 @@
 // PyGame Simple Platformer Template
-import type { GameTemplate } from './pygame-template-types';
+import { GameTemplate } from './pygame-template-types';
 
 export const platformerTemplate: GameTemplate = {
   id: 'simple-platformer',

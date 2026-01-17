@@ -1,9 +1,9 @@
+// PyGame Runner Component - Executes compiled Python games using Pyodide
+import { useEffect, useRef, useState, useCallback } from 'react';
+import { Play, Pause, RefreshCw, Download, Maximize, Minimize, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { compilePythonGame } from '@/lib/pygame-game-compiler';
-import { Download, Maximize, Minimize, Pause, Play, RefreshCw, X } from 'lucide-react';
-// PyGame Runner Component - Executes compiled Python games using Pyodide
-import { useCallback, useEffect, useRef, useState } from 'react';
 
 interface PygameRunnerProps {
   selectedComponents?: Record<string, string>;

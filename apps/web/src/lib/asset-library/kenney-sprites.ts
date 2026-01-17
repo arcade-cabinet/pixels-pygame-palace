@@ -1,5 +1,5 @@
 // Auto-generated Kenney asset manifests
-import type { SpriteAsset } from './asset-types';
+import { SpriteAsset } from './asset-types';
 
 export const kenneySprites: SpriteAsset[] = [
   {

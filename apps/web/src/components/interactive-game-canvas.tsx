@@ -1,23 +1,42 @@
-import { Badge } from '@/components/ui/badge';
+import { useRef, useState, useEffect, useCallback } from 'react';
+import { useDrop } from 'react-dnd';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
+  DialogFooter,
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import {
+  Play,
+  Pause,
+  Grid3x3,
+  Move,
+  Trash2,
+  Settings,
+  MousePointer,
+  Maximize2,
+  RotateCw,
+  Copy,
+} from 'lucide-react';
+import { cn } from '@/lib/utils';
 // Pyodide removed - new pygame component system coming
 import { useToast } from '@/hooks/use-toast';
-import { cn } from '@/lib/utils';
-import type { Entity, GameConfig, Scene } from '@professor-pixel/shared-types';
-import { Grid3x3, Pause, Play, Trash2 } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
-import { useDrop } from 'react-dnd';
+import type { Entity, Scene, GameConfig } from '@professor-pixel/types';
 import type { DraggableAsset } from './draggable-asset-library';
 
 interface InteractiveGameCanvasProps {
@@ -395,7 +414,7 @@ export default function InteractiveGameCanvas({
                       ...entityConfig,
                       position: {
                         ...entityConfig.position!,
-                        x: Number.parseInt(e.target.value) || 0,
+                        x: parseInt(e.target.value) || 0,
                       },
                     })
                   }
@@ -413,7 +432,7 @@ export default function InteractiveGameCanvas({
                       ...entityConfig,
                       position: {
                         ...entityConfig.position!,
-                        y: Number.parseInt(e.target.value) || 0,
+                        y: parseInt(e.target.value) || 0,
                       },
                     })
                   }
@@ -434,7 +453,7 @@ export default function InteractiveGameCanvas({
                       ...entityConfig,
                       size: {
                         ...entityConfig.size!,
-                        width: Number.parseInt(e.target.value) || 40,
+                        width: parseInt(e.target.value) || 40,
                       },
                     })
                   }
@@ -452,7 +471,7 @@ export default function InteractiveGameCanvas({
                       ...entityConfig,
                       size: {
                         ...entityConfig.size!,
-                        height: Number.parseInt(e.target.value) || 40,
+                        height: parseInt(e.target.value) || 40,
                       },
                     })
                   }
@@ -470,7 +489,7 @@ export default function InteractiveGameCanvas({
                 onChange={(e) =>
                   setEntityConfig({
                     ...entityConfig,
-                    layer: Number.parseInt(e.target.value) || 0,
+                    layer: parseInt(e.target.value) || 0,
                   })
                 }
                 data-testid="input-entity-layer"

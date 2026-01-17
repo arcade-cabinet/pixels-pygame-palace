@@ -1,19 +1,20 @@
-import { Badge } from '@/components/ui/badge';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { AnimatePresence, motion } from 'framer-motion';
+import { Badge } from '@/components/ui/badge';
 import {
   CheckCircle2,
   Circle,
-  Code,
-  Gamepad2,
-  Palette,
-  Settings,
   Sparkles,
   Trophy,
+  Gamepad2,
+  Code,
+  Palette,
+  Music,
+  Settings,
 } from 'lucide-react';
+import { SessionActions } from './wizard-types';
 import { useEffect, useState } from 'react';
-import type { SessionActions } from './wizard-types';
 
 interface GameProgressSidebarProps {
   sessionActions: SessionActions;
@@ -227,7 +228,7 @@ export default function GameProgressSidebar({
               <div className="flex items-center gap-2">
                 <motion.div
                   animate={{ rotate: 360 }}
-                  transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, ease: 'linear' }}
+                  transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
                 >
                   <Settings className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                 </motion.div>

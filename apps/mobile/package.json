@@ -1,0 +1,38 @@
+{
+  "name": "@professor-pixel/mobile",
+  "version": "1.0.0",
+  "private": true,
+  "main": "expo-router",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@professor-pixel/types": "workspace:*",
+    "@professor-pixel/config": "workspace:*",
+    "@professor-pixel/core": "workspace:*",
+    "@professor-pixel/python-sandbox": "workspace:*",
+    "@professor-pixel/lesson-engine": "workspace:*",
+    "@babylonjs/core": "^8.46.2",
+    "@babylonjs/loaders": "^8.46.2",
+    "@babylonjs/react-native": "^1.9.0",
+    "@react-native-community/slider": "^4.5.5",
+    "expo": "^52.0.27",
+    "expo-gl": "^15.0.4",
+    "expo-router": "^4.0.18",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-native": "^0.76.6",
+    "react-native-safe-area-context": "^4.14.0",
+    "react-native-screens": "^4.4.0",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@types/react": "^19.0.0",
+    "typescript": "^5.9.3"
+  }
+}

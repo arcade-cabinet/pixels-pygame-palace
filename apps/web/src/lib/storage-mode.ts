@@ -1,4 +1,4 @@
-import { ClientStorage } from '@professor-pixel/shared-types';
+import { ClientStorage } from '@shared/storage-client';
 
 // Environment detection for storage mode
 export const isStaticMode = (): boolean => {
@@ -37,20 +37,20 @@ export class StorageAdapter {
   }
 
   // Progress methods
-  async getUserProgress(userId = 'anonymous-user') {
+  async getUserProgress(userId: string = 'anonymous-user') {
     return this.storage.getUserProgress(userId);
   }
 
-  async getUserProgressForLesson(lessonId: string, userId = 'anonymous-user') {
+  async getUserProgressForLesson(lessonId: string, userId: string = 'anonymous-user') {
     return this.storage.getUserProgressForLesson(userId, lessonId);
   }
 
-  async updateUserProgress(lessonId: string, progressData: any, userId = 'anonymous-user') {
+  async updateUserProgress(lessonId: string, progressData: any, userId: string = 'anonymous-user') {
     return this.storage.updateUserProgress(userId, lessonId, progressData);
   }
 
   // Project methods
-  async listProjects(userId = 'anonymous-user') {
+  async listProjects(userId: string = 'anonymous-user') {
     return this.storage.listProjects(userId);
   }
 
@@ -58,7 +58,7 @@ export class StorageAdapter {
     return this.storage.getProject(id);
   }
 
-  async createProject(project: any, userId = 'anonymous-user') {
+  async createProject(project: any, userId: string = 'anonymous-user') {
     return this.storage.createProject({ ...project, userId });
   }
 

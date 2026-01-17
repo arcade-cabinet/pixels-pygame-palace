@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react';
+import { ComponentType } from 'react';
 
 // Main component props
 export interface UniversalWizardProps {

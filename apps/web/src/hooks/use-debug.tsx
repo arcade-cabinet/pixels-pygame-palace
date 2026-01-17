@@ -1,5 +1,5 @@
-import { type GlobalError, globalErrorHandler } from '@/lib/global-error-handler';
-import { useCallback, useEffect, useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { globalErrorHandler, type GlobalError } from '@/lib/global-error-handler';
 
 /**
  * Debug hook for development and troubleshooting

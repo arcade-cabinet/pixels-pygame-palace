@@ -12,7 +12,7 @@ export async function gradeCode(
 
   try {
     let actualOutput: string;
-    const executionError: string | null = null;
+    let executionError: string | null = null;
 
     // Use pre-execution result if provided to avoid double execution
     if (preExecutionResult) {

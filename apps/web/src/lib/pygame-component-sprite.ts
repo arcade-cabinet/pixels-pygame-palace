@@ -1,5 +1,5 @@
 // PyGame Sprite Component
-import { type PyGameComponent, hexToRgb } from './pygame-component-types';
+import { PyGameComponent, hexToRgb } from './pygame-component-types';
 
 interface SpriteProperties {
   x: number;

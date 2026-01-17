@@ -1,31 +1,32 @@
 // Unit tests for persistence library
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import {
-  CookieMock,
-  LocalStorageMock,
-  SessionStorageMock,
-  createCorruptedData,
-} from '../../../tests/test-utils';
-import {
-  type PersistedSessionState,
-  type PersistedWizardState,
-  type UserPreferences,
-  clearAllData,
-  clearSessionState,
-  clearWizardState,
-  deleteCookie,
-  getCookie,
-  isStorageAvailable,
-  loadSessionState,
-  loadUserPreferences,
-  loadWizardState,
-  migrateStorageIfNeeded,
-  saveSessionState,
-  saveUserPreferences,
   saveWizardState,
   saveWizardStateDebounced,
+  loadWizardState,
+  clearWizardState,
+  saveSessionState,
+  loadSessionState,
+  clearSessionState,
   setCookie,
+  getCookie,
+  deleteCookie,
+  saveUserPreferences,
+  loadUserPreferences,
+  clearAllData,
+  migrateStorageIfNeeded,
+  isStorageAvailable,
+  PersistedWizardState,
+  PersistedSessionState,
+  UserPreferences,
 } from '../persistence';
+import {
+  LocalStorageMock,
+  SessionStorageMock,
+  CookieMock,
+  createCorruptedData,
+  waitFor,
+} from '../../../tests/test-utils';
 
 describe('Persistence Library', () => {
   let localStorageMock: LocalStorageMock;

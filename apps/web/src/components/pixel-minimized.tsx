@@ -1,8 +1,8 @@
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown, Trophy, Sparkles, MessageCircle, Target, Star } from 'lucide-react';
 import pixelImage from '@assets/pixel/Pixel_happy_excited_expression_22a41625.png';
-import { AnimatePresence, motion } from 'framer-motion';
-import { ChevronDown, MessageCircle, Sparkles, Star, Target, Trophy } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
-import type { SessionActions } from './wizard-types';
+import { SessionActions } from './wizard-types';
 
 interface PixelMinimizedProps {
   onRestore: () => void;
@@ -215,7 +215,7 @@ export default function PixelMinimized({
                     }
                   : {
                       duration: 2,
-                      repeat: Number.POSITIVE_INFINITY,
+                      repeat: Infinity,
                       ease: 'easeInOut',
                     }
               }
@@ -229,7 +229,7 @@ export default function PixelMinimized({
               }}
               transition={{
                 duration: 2,
-                repeat: Number.POSITIVE_INFINITY,
+                repeat: Infinity,
                 ease: 'easeInOut',
               }}
             />

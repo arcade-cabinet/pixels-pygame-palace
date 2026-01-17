@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { type SwipeEventData, useSwipeable } from 'react-swipeable';
+import { useSwipeable, SwipeEventData } from 'react-swipeable';
 
 interface EdgeSwipeOptions {
   onEdgeSwipe?: (edge: 'top' | 'bottom' | 'left' | 'right') => void;

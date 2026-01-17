@@ -1,14 +1,14 @@
-import { Badge } from '@/components/ui/badge';
+import { useState, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Sparkles, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { useToast } from '@/hooks/use-toast';
+import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
-import { AnimatePresence, motion } from 'framer-motion';
-import { ChevronRight, Sparkles } from 'lucide-react';
-import { useCallback, useEffect, useState } from 'react';
-import PygameLivePreview, { type GameChoice } from './pygame-live-preview';
-import { DialogueText, getDialogueHelpers, useWizardDialogue } from './wizard-dialogue-engine';
-import type { WizardOption } from './wizard-types';
+import { useToast } from '@/hooks/use-toast';
+import { useWizardDialogue, DialogueText, getDialogueHelpers } from './wizard-dialogue-engine';
+import PygameLivePreview, { GameChoice } from './pygame-live-preview';
+import type { WizardOption, GameChoice as GameChoiceType } from './wizard-types';
 
 interface WizardWithPreviewProps {
   pyodide?: any;

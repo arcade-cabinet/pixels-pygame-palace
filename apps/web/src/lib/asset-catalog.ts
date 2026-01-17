@@ -1,3 +1,8 @@
+// Comprehensive Asset Catalog System
+// Manages 2000+ assets across 2D sprites, 3D models, UI elements, and audio files
+
+import { GameAsset } from './asset-library';
+
 export interface AssetMetadata {
   id: string;
   name: string;
@@ -40,11 +45,11 @@ export class AssetCatalog {
   private assetsByType: Map<string, Set<string>> = new Map();
   private assetsByCategory: Map<string, Set<string>> = new Map();
   private loadingQueue: string[] = [];
-  private memoryUsage = 0;
+  private memoryUsage: number = 0;
   private maxMemoryUsage: number = 500 * 1024 * 1024; // 500MB default
-  private hotSwapEnabled = true;
+  private hotSwapEnabled: boolean = true;
   private assetCache: Map<string, { data: any; timestamp: number }> = new Map();
-  private cacheTimeout = 60000; // 1 minute
+  private cacheTimeout: number = 60000; // 1 minute
 
   constructor(maxMemory?: number) {
     if (maxMemory) {

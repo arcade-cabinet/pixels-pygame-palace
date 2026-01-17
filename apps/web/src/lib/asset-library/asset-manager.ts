@@ -1,23 +1,23 @@
 // Asset Manager System
 // Main system for loading, managing, and searching game assets
 
-import { allBackgrounds } from './asset-backgrounds';
-import { allSounds } from './asset-sounds';
-import { allSprites } from './asset-sprites';
-import type {
-  AssetFilter,
-  AssetLoadStatus,
-  AssetSelection,
-  BackgroundAsset,
+import {
   GameAsset,
-  SoundAsset,
+  AssetFilter,
+  AssetSelection,
+  AssetLoadStatus,
   SpriteAsset,
+  SoundAsset,
+  BackgroundAsset,
 } from './asset-types';
+import { allSprites } from './asset-sprites';
+import { allSounds } from './asset-sounds';
+import { allBackgrounds } from './asset-backgrounds';
 
-import { kenneyBackgrounds } from './kenney-backgrounds';
-import { kenneyMusic, kenneySounds } from './kenney-sounds';
 // Import real Kenney assets
 import { kenneySprites } from './kenney-sprites';
+import { kenneyBackgrounds } from './kenney-backgrounds';
+import { kenneySounds, kenneyMusic } from './kenney-sounds';
 
 // Asset Manager Class
 export class AssetManager {

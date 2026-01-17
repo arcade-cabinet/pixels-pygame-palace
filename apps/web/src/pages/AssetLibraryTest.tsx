@@ -1,13 +1,13 @@
 // Asset Library Test Page
 // Test component to verify the asset library system
 
-import AssetBrowserWizard from '@/components/asset-browser-wizard';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import AssetBrowserWizard from '@/components/asset-browser-wizard';
+import { GameAsset } from '@/lib/asset-library/asset-types';
 import { assetManager } from '@/lib/asset-library/asset-manager';
-import type { GameAsset } from '@/lib/asset-library/asset-types';
-import { Grid3x3, Sparkles } from 'lucide-react';
-import { useState } from 'react';
+import { Sparkles, Search, Grid3x3 } from 'lucide-react';
 
 export default function AssetLibraryTest() {
   const [showBrowser, setShowBrowser] = useState(false);

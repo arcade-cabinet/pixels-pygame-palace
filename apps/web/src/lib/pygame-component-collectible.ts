@@ -1,5 +1,5 @@
 // PyGame Collectible Component
-import { type PyGameComponent, drawHeart, drawStar, hexToRgb } from './pygame-component-types';
+import { PyGameComponent, hexToRgb, drawStar, drawHeart } from './pygame-component-types';
 
 interface CollectibleProperties {
   x: number;

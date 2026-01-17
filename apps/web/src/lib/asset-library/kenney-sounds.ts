@@ -1,4 +1,4 @@
-import type { SoundAsset } from './asset-types';
+import { SoundAsset } from './asset-types';
 
 export const kenneySounds: SoundAsset[] = [
   {

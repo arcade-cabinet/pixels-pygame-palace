@@ -1,10 +1,22 @@
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useSwipeable } from 'react-swipeable';
+import {
+  X,
+  Gamepad2,
+  BookOpen,
+  Download,
+  TrendingUp,
+  Home,
+  Clock,
+  Trophy,
+  Code2,
+  Settings,
+  ChevronLeft,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { AnimatePresence, motion } from 'framer-motion';
-import { BookOpen, Clock, Download, Gamepad2, Home, TrendingUp, Trophy, X } from 'lucide-react';
-import { useEffect, useState } from 'react';
-import { useSwipeable } from 'react-swipeable';
 
 // Import Pixel images
 import pixelExcited from '@assets/pixel/Pixel_celebrating_victory_expression_24b7a377.png';
@@ -174,7 +186,7 @@ export default function PixelMenu({
                     }}
                     transition={{
                       duration: 2,
-                      repeat: Number.POSITIVE_INFINITY,
+                      repeat: Infinity,
                       repeatType: 'reverse',
                     }}
                   />

@@ -1,9 +1,9 @@
 // Scene Generator for Pygame Components
 // Combines selected components into a complete pygame game script
 
-import type { ComponentType } from './pygame-component-types';
 // Import necessary types and functions
 import { getComponentById } from './pygame-components';
+import type { ComponentType } from './pygame-component-types';
 
 // Define ComponentSelection interface locally
 export interface ComponentSelection {

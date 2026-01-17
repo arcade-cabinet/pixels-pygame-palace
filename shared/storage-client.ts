@@ -1,12 +1,12 @@
-import type {
-  InsertLesson,
-  InsertProject,
-  InsertUser,
-  InsertUserProgress,
-  Lesson,
-  Project,
-  User,
-  UserProgress,
+import {
+  type User,
+  type InsertUser,
+  type Lesson,
+  type InsertLesson,
+  type UserProgress,
+  type InsertUserProgress,
+  type Project,
+  type InsertProject,
 } from '@shared/schema';
 
 // Client-side storage adapter for GitHub Pages compatibility
@@ -55,7 +55,7 @@ export class ClientStorage {
       return crypto.randomUUID();
     }
     // Fallback for older browsers
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
       const r = (Math.random() * 16) | 0;
       const v = c === 'x' ? r : (r & 0x3) | 0x8;
       return v.toString(16);

@@ -1,19 +1,19 @@
-import { AppErrorBoundary, PageErrorBoundary } from '@/components/error-boundary';
-import PixelPresence from '@/components/pixel-presence';
+import { Switch, Route, useLocation } from 'wouter';
+import { useEffect } from 'react';
+import { queryClient } from './lib/queryClient';
+import { QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
-import UniversalWizard from '@/components/universal-wizard';
+import { AppErrorBoundary, PageErrorBoundary } from '@/components/error-boundary';
 import { globalErrorHandler } from '@/lib/global-error-handler';
-import AssetLibraryTest from '@/pages/AssetLibraryTest';
-import PersistenceTest from '@/pages/PersistenceTest';
+import NotFound from '@/pages/not-found';
 import Home from '@/pages/home';
 import LessonPage from '@/pages/lesson';
-import NotFound from '@/pages/not-found';
+import PixelPresence from '@/components/pixel-presence';
+import UniversalWizard from '@/components/universal-wizard';
+import AssetLibraryTest from '@/pages/AssetLibraryTest';
 import PygamePreviewTest from '@/pages/pygame-preview-test';
-import { QueryClientProvider } from '@tanstack/react-query';
-import { useEffect } from 'react';
-import { Route, Switch, useLocation } from 'wouter';
-import { queryClient } from './lib/queryClient';
+import PersistenceTest from '@/pages/PersistenceTest';
 
 function Router() {
   return (

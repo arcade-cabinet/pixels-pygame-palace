@@ -1,5 +1,5 @@
-import pixelImage from '@assets/pixel/Pixel_happy_excited_expression_22a41625.png';
 import { motion } from 'framer-motion';
+import pixelImage from '@assets/pixel/Pixel_happy_excited_expression_22a41625.png';
 import { ANIMATIONS, AVATAR_SIZES, STYLES } from './wizard-constants';
 
 interface WizardAvatarProps {
@@ -63,7 +63,7 @@ export default function WizardAvatarDisplay({
       }}
       transition={{
         duration: ANIMATIONS.AVATAR_BOUNCE.duration,
-        repeat: Number.POSITIVE_INFINITY,
+        repeat: Infinity,
         repeatType: 'reverse',
       }}
       className={`relative ${className}`}
@@ -81,7 +81,7 @@ export default function WizardAvatarDisplay({
           animate={{ scale: ANIMATIONS.AVATAR_PULSE.scale as any }}
           transition={{
             duration: ANIMATIONS.AVATAR_PULSE.duration,
-            repeat: Number.POSITIVE_INFINITY,
+            repeat: Infinity,
           }}
         />
       )}

@@ -145,7 +145,7 @@ const ERROR_EXPLANATIONS: Record<string, { explanation: string; suggestions: str
 function getLineContext(
   code: string,
   lineNumber: number,
-  contextSize = 3,
+  contextSize: number = 3,
 ): {
   beforeLines: string[];
   errorLine: string;
@@ -209,7 +209,7 @@ function parseTraceback(traceback: string, context?: ErrorContext): PythonError 
       if (fileMatch && !fileName) {
         // Take the first match we find going backwards (deepest frame)
         fileName = fileMatch[1];
-        lineNumber = Number.parseInt(fileMatch[2]);
+        lineNumber = parseInt(fileMatch[2]);
         break;
       }
     }

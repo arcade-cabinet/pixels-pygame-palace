@@ -1,5 +1,5 @@
 // PyGame Paddle Component
-import { type PyGameComponent, hexToRgb } from './pygame-component-types';
+import { PyGameComponent, hexToRgb } from './pygame-component-types';
 
 interface PaddleProperties {
   x: number;

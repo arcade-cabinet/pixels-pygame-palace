@@ -1,19 +1,29 @@
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { useRef, useState, useEffect, useCallback } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { Slider } from '@/components/ui/slider';
+import {
+  Play,
+  Pause,
+  RotateCcw,
+  Zap,
+  Volume2,
+  Gamepad2,
+  Sparkles,
+  FlaskConical,
+  Split,
+} from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useToast } from '@/hooks/use-toast';
 import {
-  createPygameEnvironment,
-  flushFrameBuffer,
-  resetPygameState,
   setCanvasContext,
+  flushFrameBuffer,
+  createPygameEnvironment,
+  resetPygameState,
 } from '@/lib/pygame-simulation';
 import { PythonRunner } from '@/lib/python/runner';
-import { cn } from '@/lib/utils';
-import { AnimatePresence, motion } from 'framer-motion';
-import { FlaskConical, Gamepad2, Pause, Play, RotateCcw, Sparkles, Split, Zap } from 'lucide-react';
-import { useCallback, useEffect, useRef, useState } from 'react';
 import { generatePygameCode } from './pygame-code-generator';
 
 export interface GameChoice {

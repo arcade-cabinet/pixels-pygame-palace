@@ -1,7 +1,7 @@
 // Background Asset Definitions
 // CC0 backgrounds and environments for games
 
-import type { BackgroundAsset } from './asset-types';
+import { BackgroundAsset } from './asset-types';
 
 // Background assets
 export const backgrounds: BackgroundAsset[] = [

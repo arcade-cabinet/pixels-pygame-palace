@@ -1,4 +1,4 @@
-import { StorageAdapter, isStaticMode } from './storage-mode';
+import { isStaticMode, StorageAdapter } from './storage-mode';
 
 // Centralized data layer that switches between API and static storage
 class DataService {

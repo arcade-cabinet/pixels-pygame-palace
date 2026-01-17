@@ -1,5 +1,5 @@
 // PyGame Breakout Template
-import type { GameTemplate } from './pygame-template-types';
+import { GameTemplate } from './pygame-template-types';
 
 export const breakoutTemplate: GameTemplate = {
   id: 'breakout',

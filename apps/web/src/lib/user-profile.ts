@@ -1,4 +1,4 @@
-import type { UserProfile, WizardState } from '@professor-pixel/shared-types';
+import type { UserProfile, WizardState } from '@shared/schema';
 
 // User Profile Management
 export const getUserProfile = (): UserProfile | null => {

@@ -1,22 +1,16 @@
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { Menu, Gamepad2, Sparkles } from 'lucide-react';
 import { useEdgeSwipe } from '@/hooks/use-edge-swipe';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Gamepad2, Menu, Sparkles } from 'lucide-react';
-import GameProgressSidebar from './game-progress-sidebar';
 import PixelMenu from './pixel-menu';
-import { CenteredAvatar, LandscapeAvatar, PortraitAvatar } from './wizard-avatar-display';
-import { ANIMATIONS, EDGE_SWIPE_CONFIG, ICON_SIZES, STYLES } from './wizard-constants';
-import { DialogueBox } from './wizard-dialogue-engine';
+import GameProgressSidebar from './game-progress-sidebar';
+import { PortraitAvatar, LandscapeAvatar, CenteredAvatar } from './wizard-avatar-display';
+import { DialogueBox, DialogueText } from './wizard-dialogue-engine';
 import WizardOptionHandler, { ContinueButton } from './wizard-option-handler';
-import type {
-  DeviceState,
-  SessionActions,
-  UIState,
-  WizardNode,
-  WizardOption,
-} from './wizard-types';
-import { getCurrentText, shouldShowContinue, shouldShowOptions } from './wizard-utils';
+import { WizardNode, WizardOption, DeviceState, UIState, SessionActions } from './wizard-types';
+import { STYLES, EDGE_SWIPE_CONFIG, ANIMATIONS, ICON_SIZES } from './wizard-constants';
+import { getCurrentText, shouldShowOptions, shouldShowContinue } from './wizard-utils';
 
 interface LayoutProps {
   currentNode: WizardNode | null;
@@ -226,7 +220,7 @@ function DesktopHeader() {
               animate={{ rotate: ANIMATIONS.SPARKLE_ROTATE.rotate as any }}
               transition={{
                 duration: ANIMATIONS.SPARKLE_ROTATE.duration,
-                repeat: Number.POSITIVE_INFINITY,
+                repeat: Infinity,
                 ease: 'linear',
               }}
             >

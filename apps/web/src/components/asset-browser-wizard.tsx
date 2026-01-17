@@ -1,17 +1,17 @@
 // Asset Browser Component for PyGame Palace Wizard
 // Visual browser for CC0 game assets with filtering and preview
 
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { useState, useMemo, useCallback, useEffect } from 'react';
+import { Search, Filter, Grid3x3, List, X, Check, Info, Sparkles } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { GameAsset, AssetType, AssetFilter, AssetSelection } from '@/lib/asset-library/asset-types';
 import { assetManager } from '@/lib/asset-library/asset-manager';
-import type { AssetFilter, AssetType, GameAsset } from '@/lib/asset-library/asset-types';
-import { Check, Grid3x3, List, Search, Sparkles, X } from 'lucide-react';
-import { useCallback, useEffect, useMemo, useState } from 'react';
 
 interface AssetBrowserProps {
   onSelect?: (asset: GameAsset) => void;

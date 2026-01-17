@@ -1,11 +1,21 @@
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Badge } from '@/components/ui/badge';
+import { Component, ReactNode, ErrorInfo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
+import {
+  RefreshCw,
+  Home,
+  Bug,
+  BookOpen,
+  AlertTriangle,
+  Code2,
+  MessageCircle,
+  Shield,
+  Lightbulb,
+} from 'lucide-react';
 import { motion } from 'framer-motion';
-import { AlertTriangle, Bug, Code2, Home, Lightbulb, MessageCircle, RefreshCw } from 'lucide-react';
-import { Component, type ErrorInfo, type ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;

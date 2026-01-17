@@ -1,23 +1,23 @@
-import { Badge } from '@/components/ui/badge';
+import { useDrag } from 'react-dnd';
 import { Card } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { type PyGameComponent, getAllComponents } from '@/lib/pygame-components';
-import { cn } from '@/lib/utils';
+import { Badge } from '@/components/ui/badge';
 import {
-  Circle,
   Gamepad2,
-  Ghost,
-  Heart,
-  Image,
   Package,
-  RectangleHorizontal,
-  Sparkles,
+  Circle,
   Square,
+  Ghost,
   Star,
-  Timer,
+  Image,
   Type,
+  Sparkles,
+  Timer,
+  Heart,
+  RectangleHorizontal,
 } from 'lucide-react';
-import { useDrag } from 'react-dnd';
+import { cn } from '@/lib/utils';
+import { getAllComponents, PyGameComponent } from '@/lib/pygame-components';
 
 interface PygameEditorPaletteProps {
   className?: string;

@@ -45,7 +45,7 @@ export async function validateRuntime(
           break;
 
         case 'is_numeric':
-          const numericValue = Number.parseFloat(output.trim());
+          const numericValue = parseFloat(output.trim());
           if (isNaN(numericValue)) {
             errors.push('Output should be a valid number');
           }
@@ -61,7 +61,7 @@ export async function validateRuntime(
           break;
 
         case 'range_check':
-          const value = Number.parseFloat(output.trim());
+          const value = parseFloat(output.trim());
           const min = params.min;
           const max = params.max;
           if (isNaN(value) || value < min || value > max) {

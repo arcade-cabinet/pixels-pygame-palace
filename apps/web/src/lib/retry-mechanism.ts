@@ -3,7 +3,7 @@
  * Provides robust retry logic for failed operations with exponential backoff
  */
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 export interface RetryOptions {
   /** Maximum number of retry attempts */

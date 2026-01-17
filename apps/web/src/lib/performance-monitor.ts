@@ -344,7 +344,7 @@ class PerformanceMonitor {
     return filtered;
   }
 
-  getSlowOperations(threshold = 1000): PerformanceMetric[] {
+  getSlowOperations(threshold: number = 1000): PerformanceMetric[] {
     return this.metrics
       .filter((m) => m.status === 'completed' && m.duration && m.duration > threshold)
       .sort((a, b) => (b.duration || 0) - (a.duration || 0));

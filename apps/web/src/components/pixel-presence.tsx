@@ -1,18 +1,29 @@
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { useIsMobile } from '@/hooks/use-media-query';
+import {
+  Gamepad2,
+  BookOpen,
+  ChevronRight,
+  Sparkles,
+  Code2,
+  Rocket,
+  History,
+  X,
+} from 'lucide-react';
 import { sessionHistory } from '@/lib/session-history';
-import { AnimatePresence, motion } from 'framer-motion';
-import { BookOpen, ChevronRight, Gamepad2, History, X } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useIsMobile } from '@/hooks/use-media-query';
 
-import pixelCoding from '@assets/pixel/Pixel_coding_programming_expression_56de8ca0.png';
-import pixelGaming from '@assets/pixel/Pixel_gaming_focused_expression_6f3fdfab.png';
 // Import Pixel images
 import pixelHappy from '@assets/pixel/Pixel_happy_excited_expression_22a41625.png';
-import pixelTeaching from '@assets/pixel/Pixel_teaching_explaining_expression_27e09763.png';
 import pixelThinking from '@assets/pixel/Pixel_thinking_pondering_expression_0ffffedb.png';
+import pixelCelebrating from '@assets/pixel/Pixel_celebrating_victory_expression_24b7a377.png';
+import pixelEncouraging from '@assets/pixel/Pixel_encouraging_supportive_expression_cf958090.png';
+import pixelTeaching from '@assets/pixel/Pixel_teaching_explaining_expression_27e09763.png';
+import pixelGaming from '@assets/pixel/Pixel_gaming_focused_expression_6f3fdfab.png';
 import pixelWelcoming from '@assets/pixel/Pixel_welcoming_waving_expression_279ffdd2.png';
+import pixelCoding from '@assets/pixel/Pixel_coding_programming_expression_56de8ca0.png';
 
 type PresenceState = 'center-stage' | 'waiting-corner' | 'expanded-corner';
 
@@ -265,7 +276,7 @@ export default function PixelPresence({ onNavigate, currentPath = '/' }: PixelPr
               <motion.div
                 className="absolute inset-0 rounded-full bg-purple-500/20"
                 animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
+                transition={{ duration: 3, repeat: Infinity }}
               />
               {/* Tooltip on hover - desktop only */}
               {!isMobile && (

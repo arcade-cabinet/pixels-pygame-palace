@@ -1,9 +1,10 @@
+import { useRef, useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Card, CardContent } from '@/components/ui/card';
+import { Play, RotateCcw, Keyboard, CheckCircle2, Target } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { CheckCircle2, Keyboard, Play, RotateCcw, Target } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
 
 // Monaco Editor types
 declare global {

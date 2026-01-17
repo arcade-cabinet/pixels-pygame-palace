@@ -17,7 +17,7 @@ export interface SessionState {
 class SessionHistory {
   private static instance: SessionHistory;
   private events: SessionEvent[] = [];
-  private currentPosition = -1;
+  private currentPosition: number = -1;
   private readonly STORAGE_KEY = 'pixel-session-history';
   private listeners: Set<(state: SessionState) => void> = new Set();
 
@@ -38,7 +38,7 @@ class SessionHistory {
     type: SessionEvent['type'],
     description: string,
     data: any = {},
-    canRevert = true,
+    canRevert: boolean = true,
   ): void {
     const event: SessionEvent = {
       id: nanoid(),
@@ -71,7 +71,7 @@ class SessionHistory {
   }
 
   // Track a lesson completion
-  trackLesson(lessonId: string, lessonName: string, completed = false): void {
+  trackLesson(lessonId: string, lessonName: string, completed: boolean = false): void {
     this.addEvent('lesson', completed ? `Completed: ${lessonName}` : `Started: ${lessonName}`, {
       lessonId,
       lessonName,
@@ -210,7 +210,7 @@ class SessionHistory {
   }
 
   // Get recent events
-  getRecentEvents(count = 10): SessionEvent[] {
+  getRecentEvents(count: number = 10): SessionEvent[] {
     return this.events.slice(-count);
   }
 

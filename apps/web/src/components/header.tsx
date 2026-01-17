@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
-import type { Lesson } from '@professor-pixel/shared-types';
+import { ArrowLeft, Gamepad2, Trophy, Star } from 'lucide-react';
+import type { Lesson } from '@shared/schema';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Gamepad2, Star, Trophy } from 'lucide-react';
 
 interface HeaderProps {
   lesson: Lesson;

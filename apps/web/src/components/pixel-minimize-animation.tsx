@@ -1,7 +1,7 @@
-import pixelImage from '@assets/pixel/Pixel_happy_excited_expression_22a41625.png';
-import { AnimatePresence, motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import pixelImage from '@assets/pixel/Pixel_happy_excited_expression_22a41625.png';
 
 interface PixelMinimizeAnimationProps {
   message?: string;
@@ -63,14 +63,14 @@ export default function PixelMinimizeAnimation({
                 <motion.div
                   className="absolute -top-2 -right-2"
                   animate={{ rotate: 360 }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: 'linear' }}
+                  transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
                 >
                   <Sparkles className="w-6 h-6 text-yellow-400" />
                 </motion.div>
                 <motion.div
                   className="absolute -bottom-2 -left-2"
                   animate={{ rotate: -360 }}
-                  transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: 'linear' }}
+                  transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
                 >
                   <Sparkles className="w-5 h-5 text-purple-400" />
                 </motion.div>

@@ -1,11 +1,11 @@
-import { Badge } from '@/components/ui/badge';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { allComponents } from '@/lib/pygame-components';
-import type { PygameComponent } from '@/lib/pygame-components/types';
+import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import type { PygameComponent } from '@/lib/pygame-components/types';
+import { allComponents } from '@/lib/pygame-components';
 
 interface ComponentSelectorProps {
   componentId?: string;

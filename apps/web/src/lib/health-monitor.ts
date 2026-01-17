@@ -381,7 +381,7 @@ pygame.quit()
           const stats = performanceMonitor.getStats();
 
           let status: HealthResult['status'] = 'healthy';
-          const issues: string[] = [];
+          let issues: string[] = [];
 
           // Check API performance
           if (stats.averageApiResponseTime > 5000) {

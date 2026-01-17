@@ -1,38 +1,41 @@
+import { useParams, useLocation } from 'wouter';
+import { useQuery, useMutation } from '@tanstack/react-query';
+import { useState, useEffect, useMemo } from 'react';
+import { queryClient, apiRequest } from '@/lib/queryClient';
+import { motion, AnimatePresence } from 'framer-motion';
+import Header from '@/components/header';
 import CodeEditor from '@/components/code-editor';
 import FloatingFeedback from '@/components/floating-feedback';
-import Header from '@/components/header';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { type GradingContext, gradeCode } from '@/lib/grading';
 import {
-  type ExecutionContext,
-  type ExecutionResult,
-  createPythonRunner,
-} from '@/lib/python/runner';
-import { apiRequest, queryClient } from '@/lib/queryClient';
-import type { Lesson, UserProgress } from '@professor-pixel/shared-types';
-import { useMutation, useQuery } from '@tanstack/react-query';
-import { AnimatePresence, motion } from 'framer-motion';
-import {
-  BookOpen,
-  ChevronLeft,
-  ChevronRight,
-  Code2,
-  Rocket,
   Sparkles,
+  ChevronRight,
+  ChevronLeft,
   Trophy,
+  Heart,
+  Code2,
   Zap,
+  BookOpen,
+  Rocket,
 } from 'lucide-react';
-import { useEffect, useMemo, useState } from 'react';
-import { useLocation, useParams } from 'wouter';
+import type { Lesson, UserProgress } from '@shared/schema';
+import {
+  createPythonRunner,
+  type PythonRunner,
+  type ExecutionResult,
+  type ExecutionContext,
+} from '@/lib/python/runner';
+import { gradeCode, type GradingContext } from '@/lib/grading';
 
-import pixelCelebrating from '@assets/pixel/Pixel_celebrating_victory_expression_24b7a377.png';
-import pixelEncouraging from '@assets/pixel/Pixel_encouraging_supportive_expression_cf958090.png';
 // Import Pixel images
 import pixelHappy from '@assets/pixel/Pixel_happy_excited_expression_22a41625.png';
-import pixelTeaching from '@assets/pixel/Pixel_teaching_explaining_expression_27e09763.png';
 import pixelThinking from '@assets/pixel/Pixel_thinking_pondering_expression_0ffffedb.png';
+import pixelCelebrating from '@assets/pixel/Pixel_celebrating_victory_expression_24b7a377.png';
+import pixelEncouraging from '@assets/pixel/Pixel_encouraging_supportive_expression_cf958090.png';
+import pixelTeaching from '@assets/pixel/Pixel_teaching_explaining_expression_27e09763.png';
+import pixelCoding from '@assets/pixel/Pixel_coding_programming_expression_56de8ca0.png';
 
 // Pixel's conversational dialogues for different situations
 const pixelDialogues = {
@@ -166,7 +169,7 @@ export default function LessonEnhanced() {
     }
   }, [currentStepIndex, currentStep]);
 
-  const executeCode = async (inputValues = '', runAutoGrading = false) => {
+  const executeCode = async (inputValues: string = '', runAutoGrading = false) => {
     if (!pythonRunner || !code.trim()) {
       setPixelDialogue("Let's add some code first! You can do it! 💪");
       setPixelImage(pixelEncouraging);
@@ -350,7 +353,7 @@ export default function LessonEnhanced() {
             alt="Pixel thinking"
             className="w-20 h-20 mx-auto mb-4"
             animate={{ rotate: [0, 10, -10, 0] }}
-            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+            transition={{ duration: 2, repeat: Infinity }}
           />
           <p className="text-purple-600 dark:text-purple-400">
             {pyodideLoading ? 'Setting up Python for you...' : 'Loading your lesson...'}
@@ -411,7 +414,7 @@ export default function LessonEnhanced() {
                   alt="Pixel celebrating"
                   className="w-24 h-24 mx-auto mb-4"
                   animate={{ y: [0, -10, 0], rotate: [0, 5, -5, 0] }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                  transition={{ duration: 2, repeat: Infinity }}
                 />
                 <h2 className="text-2xl font-bold mb-2 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                   Lesson Complete! 🎉
@@ -483,7 +486,7 @@ export default function LessonEnhanced() {
                   alt="Pixel"
                   className="w-16 h-16"
                   animate={{ y: [0, -3, 0] }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                  transition={{ duration: 2, repeat: Infinity }}
                 />
                 <div className="flex-1">
                   <h3 className="font-semibold text-gray-800 dark:text-gray-200 mb-1">

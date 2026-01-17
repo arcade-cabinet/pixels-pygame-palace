@@ -1,4 +1,4 @@
-import { Brain, Car, Castle, Sword, TreePine, Trophy, Zap } from 'lucide-react';
+import { Sword, TreePine, Car, Castle, Brain, Trophy, Zap } from 'lucide-react';
 
 // Game type icons mapping
 export const GAME_TYPE_ICONS: Record<string, any> = {

@@ -1,14 +1,14 @@
-import { randomUUID } from 'crypto';
-import type {
-  InsertLesson,
-  InsertProject,
-  InsertUser,
-  InsertUserProgress,
-  Lesson,
-  Project,
-  User,
-  UserProgress,
+import {
+  type User,
+  type InsertUser,
+  type Lesson,
+  type InsertLesson,
+  type UserProgress,
+  type InsertUserProgress,
+  type Project,
+  type InsertProject,
 } from '@shared/schema';
+import { randomUUID } from 'crypto';
 
 export interface IStorage {
   getUser(id: string): Promise<User | undefined>;

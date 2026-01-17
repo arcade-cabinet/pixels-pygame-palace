@@ -2,24 +2,24 @@
 // Re-exports all components from modular files
 
 // Import types
-import type { ComponentType, PyGameComponent } from './pygame-component-types';
+import type { PyGameComponent, ComponentType } from './pygame-component-types';
 
-import { drawCloud, drawHeart, drawStar, hexToRgb } from './pygame-component-types';
+import { hexToRgb, drawStar, drawHeart, drawCloud } from './pygame-component-types';
 
-import { ballComponent } from './pygame-component-ball';
-import { collectibleComponent } from './pygame-component-collectible';
-import { backgroundComponent, particleEffectComponent } from './pygame-component-effects';
-import { enemyComponent } from './pygame-component-enemy';
-import { paddleComponent } from './pygame-component-paddle';
-import { platformComponent } from './pygame-component-platform';
 // Import individual components
 import { spriteComponent } from './pygame-component-sprite';
+import { platformComponent } from './pygame-component-platform';
+import { ballComponent } from './pygame-component-ball';
+import { paddleComponent } from './pygame-component-paddle';
+import { enemyComponent } from './pygame-component-enemy';
+import { collectibleComponent } from './pygame-component-collectible';
 import {
-  buttonComponent,
-  healthBarComponent,
   scoreTextComponent,
+  buttonComponent,
   timerComponent,
+  healthBarComponent,
 } from './pygame-component-ui';
+import { particleEffectComponent, backgroundComponent } from './pygame-component-effects';
 
 // Re-export types
 export type { PyGameComponent, ComponentType };

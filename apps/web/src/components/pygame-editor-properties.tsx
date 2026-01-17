@@ -1,6 +1,8 @@
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Slider } from '@/components/ui/slider';
+import { Switch } from '@/components/ui/switch';
 import {
   Select,
   SelectContent,
@@ -8,13 +10,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Slider } from '@/components/ui/slider';
-import { Switch } from '@/components/ui/switch';
+import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { getComponentById } from '@/lib/pygame-components';
+import { Settings, Palette, Move, Code } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Move, Palette, Settings } from 'lucide-react';
-import type { PlacedComponent } from './pygame-wysiwyg-editor';
+import { PlacedComponent } from './pygame-wysiwyg-editor';
+import { getComponentById } from '@/lib/pygame-components';
 
 interface PygameEditorPropertiesProps {
   component: PlacedComponent;

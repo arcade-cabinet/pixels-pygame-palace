@@ -1,5 +1,5 @@
-import type { Entity, HistoryEntry } from '@professor-pixel/shared-types';
-import { useCallback, useRef, useState } from 'react';
+import { useState, useCallback, useRef } from 'react';
+import type { Entity, HistoryEntry } from '@professor-pixel/types';
 
 interface UseEditorHistoryOptions {
   maxHistorySize?: number;

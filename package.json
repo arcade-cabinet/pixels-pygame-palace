@@ -8,16 +8,15 @@
     "onlyBuiltDependencies": ["@biomejs/biome", "bufferutil", "esbuild", "msw"]
   },
   "scripts": {
-    "dev": "pnpm --filter @professor-pixel/api dev & pnpm --filter @professor-pixel/web dev",
-    "build": "pnpm --filter @professor-pixel/web build && pnpm --filter @professor-pixel/api build",
-    "start": "pnpm --filter @professor-pixel/api start",
-    "check": "pnpm --recursive check",
+    "dev": "pnpm --filter @professor-pixel/web dev",
+    "dev:mobile": "pnpm --filter @professor-pixel/mobile start",
+    "build": "pnpm -r build",
+    "check": "pnpm -r check && tsc",
     "format": "biome format --write .",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage"
+    "test": "pnpm -r test",
+    "clean": "pnpm -r exec rm -rf dist node_modules && rm -rf node_modules"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",

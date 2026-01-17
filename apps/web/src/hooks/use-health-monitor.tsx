@@ -1,5 +1,5 @@
-import { type HealthResult, type SystemHealth, healthMonitor } from '@/lib/health-monitor';
-import { useCallback, useEffect, useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { healthMonitor, type SystemHealth, type HealthResult } from '@/lib/health-monitor';
 
 /**
  * Hook for monitoring system health
