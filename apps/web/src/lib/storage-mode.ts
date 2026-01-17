@@ -1,4 +1,4 @@
-import { ClientStorage } from '@shared/storage-client';
+import { ClientStorage } from '@professor-pixel/types';
 
 // Environment detection for storage mode
 export const isStaticMode = (): boolean => {

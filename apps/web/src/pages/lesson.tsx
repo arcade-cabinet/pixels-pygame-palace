@@ -20,7 +20,7 @@ import {
   BookOpen,
   Rocket,
 } from 'lucide-react';
-import type { Lesson, UserProgress } from '@shared/schema';
+import type { Lesson, UserProgress } from '@professor-pixel/types';
 import {
   createPythonRunner,
   type PythonRunner,

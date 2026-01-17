@@ -1,5 +1,6 @@
 // Re-export all types from schema
 export * from './schema.js';
+export * from './lesson-schema.js';
 
 // Execution types for code sandbox
 export type Language = 'python' | 'javascript' | 'typescript';
