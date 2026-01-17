@@ -1,8 +1,8 @@
+import type { DialogueState, SessionActions, WizardNode } from '@/components/wizard-types';
+import { type RenderOptions, render } from '@testing-library/react';
+import type { ReactElement } from 'react';
 // Test utilities and helpers for testing the wizard application
 import { vi } from 'vitest';
-import { render, RenderOptions } from '@testing-library/react';
-import { ReactElement } from 'react';
-import { WizardNode, DialogueState, SessionActions } from '@/components/wizard-types';
 
 // Mock localStorage with spy capabilities
 export class LocalStorageMock {
@@ -59,7 +59,7 @@ export class CookieMock {
             .join('; ');
         },
         set: (value: string) => {
-          const pairs = value.split(';').map(s => s.trim());
+          const pairs = value.split(';').map((s) => s.trim());
           const [cookiePair] = pairs;
           if (cookiePair) {
             const [key, val] = cookiePair.split('=');
@@ -78,8 +78,8 @@ export class CookieMock {
               }
             }
           }
-        }
-      }
+        },
+      },
     };
   }
 
@@ -107,9 +107,9 @@ export const createMockWizardNode = (overrides?: Partial<WizardNode>): WizardNod
   character: 'pixel',
   options: [
     { text: 'Option 1', next: 'next-node-1' },
-    { text: 'Option 2', next: 'next-node-2' }
+    { text: 'Option 2', next: 'next-node-2' },
   ],
-  ...overrides
+  ...overrides,
 });
 
 export const createMockDialogueState = (overrides?: Partial<DialogueState>): DialogueState => ({
@@ -118,7 +118,7 @@ export const createMockDialogueState = (overrides?: Partial<DialogueState>): Dia
   dialogueStep: 0,
   carouselIndex: 0,
   showAllChoices: false,
-  ...overrides
+  ...overrides,
 });
 
 export const createMockSessionActions = (overrides?: Partial<SessionActions>): SessionActions => ({
@@ -128,16 +128,14 @@ export const createMockSessionActions = (overrides?: Partial<SessionActions>): S
   currentProject: null,
   completedSteps: [],
   unlockedEditor: false,
-  ...overrides
+  ...overrides,
 });
 
 export const createMockFlowData = (): Record<string, WizardNode> => ({
   start: createMockWizardNode({
     id: 'start',
     text: 'Welcome to the wizard!',
-    options: [
-      { text: 'Start journey', next: 'choose-game' }
-    ]
+    options: [{ text: 'Start journey', next: 'choose-game' }],
   }),
   'choose-game': createMockWizardNode({
     id: 'choose-game',
@@ -145,33 +143,27 @@ export const createMockFlowData = (): Record<string, WizardNode> => ({
     options: [
       { text: 'Platformer', next: 'platformer-intro', params: { gameType: 'platformer' } },
       { text: 'RPG', next: 'rpg-intro', params: { gameType: 'rpg' } },
-      { text: 'Racing', next: 'racing-intro', params: { gameType: 'racing' } }
-    ]
+      { text: 'Racing', next: 'racing-intro', params: { gameType: 'racing' } },
+    ],
   }),
   'platformer-intro': createMockWizardNode({
     id: 'platformer-intro',
     text: 'Welcome to platformer creation!',
     action: 'transitionToSpecializedFlow',
-    options: [
-      { text: 'Continue', next: 'platformer-setup' }
-    ]
+    options: [{ text: 'Continue', next: 'platformer-setup' }],
   }),
   'rpg-intro': createMockWizardNode({
     id: 'rpg-intro',
     text: 'Welcome to RPG creation!',
     action: 'transitionToSpecializedFlow',
-    options: [
-      { text: 'Continue', next: 'rpg-setup' }
-    ]
+    options: [{ text: 'Continue', next: 'rpg-setup' }],
   }),
   'racing-intro': createMockWizardNode({
     id: 'racing-intro',
     text: 'Welcome to racing game creation!',
     action: 'transitionToSpecializedFlow',
-    options: [
-      { text: 'Continue', next: 'racing-setup' }
-    ]
-  })
+    options: [{ text: 'Continue', next: 'racing-setup' }],
+  }),
 });
 
 // Custom matchers for persistence testing
@@ -183,10 +175,10 @@ export const persistenceMatchers = {
       message: () =>
         pass
           ? `Expected state not to be persisted as ${JSON.stringify(expected)}`
-          : `Expected state to be persisted as ${JSON.stringify(expected)}, but got ${JSON.stringify(received)}`
+          : `Expected state to be persisted as ${JSON.stringify(expected)}, but got ${JSON.stringify(received)}`,
     };
   },
-  
+
   toHaveValidVersion(received: any, expectedVersion: string) {
     const pass = received?.version === expectedVersion;
     return {
@@ -194,22 +186,26 @@ export const persistenceMatchers = {
       message: () =>
         pass
           ? `Expected version not to be ${expectedVersion}`
-          : `Expected version to be ${expectedVersion}, but got ${received?.version}`
+          : `Expected version to be ${expectedVersion}, but got ${received?.version}`,
     };
-  }
+  },
 };
 
 // Helper to wait for async operations
-export const waitFor = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+export const waitFor = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // Helper to trigger storage events
-export const triggerStorageEvent = (key: string, newValue: string | null, oldValue: string | null = null) => {
+export const triggerStorageEvent = (
+  key: string,
+  newValue: string | null,
+  oldValue: string | null = null,
+) => {
   const event = new StorageEvent('storage', {
     key,
     newValue,
     oldValue,
     storageArea: localStorage,
-    url: window.location.href
+    url: window.location.href,
   });
   window.dispatchEvent(event);
 };
@@ -219,19 +215,19 @@ export const simulatePageRefresh = () => {
   // Save current localStorage and sessionStorage
   const localStorageData = { ...localStorage };
   const sessionStorageData = { ...sessionStorage };
-  
+
   // Simulate unload
   window.dispatchEvent(new Event('beforeunload'));
-  
+
   // Clear memory state but keep storage
   // This simulates what happens during a real page refresh
-  
+
   // Simulate load with storage intact
   window.dispatchEvent(new Event('load'));
-  
+
   return {
     localStorageData,
-    sessionStorageData
+    sessionStorageData,
   };
 };
 
@@ -242,46 +238,46 @@ export const createCorruptedData = () => {
     malformed: '{"partial": ',
     wrongType: '123',
     missingVersion: JSON.stringify({ data: 'test' }),
-    wrongVersion: JSON.stringify({ version: '0.0.1', data: 'old' })
+    wrongVersion: JSON.stringify({ version: '0.0.1', data: 'old' }),
   };
 };
 
 // Render helper with providers
-export const renderWithProviders = (
-  ui: ReactElement,
-  options?: RenderOptions
-) => {
+export const renderWithProviders = (ui: ReactElement, options?: RenderOptions) => {
   // Add any necessary providers here (Router, Theme, etc.)
   return render(ui, options);
 };
 
 // Mock fetch responses for flow loading
-export const mockFlowResponse = (data: Record<string, WizardNode>, delay: number = 0) => {
-  return vi.fn(() => 
-    new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({
-          ok: true,
-          json: () => Promise.resolve(data)
-        });
-      }, delay);
-    })
+export const mockFlowResponse = (data: Record<string, WizardNode>, delay = 0) => {
+  return vi.fn(
+    () =>
+      new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({
+            ok: true,
+            json: () => Promise.resolve(data),
+          });
+        }, delay);
+      }),
   );
 };
 
 // Helper to validate flow structure
-export const validateFlowStructure = (flow: Record<string, WizardNode>): {
+export const validateFlowStructure = (
+  flow: Record<string, WizardNode>,
+): {
   valid: boolean;
   errors: string[];
 } => {
   const errors: string[] = [];
   const nodeIds = new Set(Object.keys(flow));
-  
+
   for (const [nodeId, node] of Object.entries(flow)) {
     // Check node has required fields
     if (!node.id) errors.push(`Node ${nodeId} missing id`);
     if (!node.text) errors.push(`Node ${nodeId} missing text`);
-    
+
     // Check options point to valid nodes
     if (node.options) {
       for (const option of node.options) {
@@ -290,7 +286,7 @@ export const validateFlowStructure = (flow: Record<string, WizardNode>): {
         }
       }
     }
-    
+
     // Check for continue-only nodes (should have meaningful choices)
     if (node.options?.length === 1 && node.options[0].text === 'Continue') {
       if (!node.action) {
@@ -298,10 +294,10 @@ export const validateFlowStructure = (flow: Record<string, WizardNode>): {
       }
     }
   }
-  
+
   return {
     valid: errors.length === 0,
-    errors
+    errors,
   };
 };
 
@@ -321,5 +317,5 @@ export const testUtils = {
   createCorruptedData,
   renderWithProviders,
   mockFlowResponse,
-  validateFlowStructure
+  validateFlowStructure,
 };

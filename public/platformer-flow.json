@@ -14,7 +14,7 @@
       }
     ]
   },
-  
+
   "choose-character": {
     "id": "choose-character",
     "text": "First, let's pick your platformer hero! Who will jump through your levels?",
@@ -75,7 +75,7 @@
       }
     ]
   },
-  
+
   "choose-platforms": {
     "id": "choose-platforms",
     "text": "What kind of platforms will your hero jump on?",
@@ -130,7 +130,7 @@
       }
     ]
   },
-  
+
   "choose-obstacles": {
     "id": "choose-obstacles",
     "text": "What obstacles should players avoid?",
@@ -176,7 +176,7 @@
       }
     ]
   },
-  
+
   "choose-collectibles": {
     "id": "choose-collectibles",
     "text": "What should players collect for points?",
@@ -222,7 +222,7 @@
       }
     ]
   },
-  
+
   "choose-powerup": {
     "id": "choose-powerup",
     "text": "What special power-up should appear rarely?",
@@ -268,7 +268,7 @@
       }
     ]
   },
-  
+
   "customize-difficulty": {
     "id": "customize-difficulty",
     "text": "How challenging should your platformer be?",
@@ -305,7 +305,7 @@
       }
     ]
   },
-  
+
   "preview-game": {
     "id": "preview-game",
     "text": "Awesome! Your platformer is ready! Look at the preview - your game is running!",
@@ -331,7 +331,7 @@
       }
     ]
   },
-  
+
   "what-to-change": {
     "id": "what-to-change",
     "text": "What would you like to adjust?",
@@ -354,7 +354,7 @@
       }
     ]
   },
-  
+
   "play-mode": {
     "id": "play-mode",
     "text": "Have fun playing your platformer! You created this!",
@@ -375,7 +375,7 @@
       }
     ]
   },
-  
+
   "save-game": {
     "id": "save-game",
     "text": "Great job! Your platformer game is saved! 🎉",
@@ -397,7 +397,7 @@
       }
     ]
   },
-  
+
   "advanced-features": {
     "id": "advanced-features",
     "text": "Want to add more advanced features to your platformer?",
@@ -420,7 +420,7 @@
       }
     ]
   },
-  
+
   "boss-setup": {
     "id": "boss-setup",
     "text": "Boss battles make platformers epic! Coming soon...",
@@ -431,7 +431,7 @@
       }
     ]
   },
-  
+
   "level-builder": {
     "id": "level-builder",
     "text": "Level builder coming soon! For now, enjoy your first level!",
@@ -442,7 +442,7 @@
       }
     ]
   },
-  
+
   "story-mode": {
     "id": "story-mode",
     "text": "Story mode will let you add dialogue and quests! Coming soon...",
@@ -453,7 +453,7 @@
       }
     ]
   },
-  
+
   "congratulations": {
     "id": "congratulations",
     "text": "Congratulations! You've created an amazing platformer game! 🎊",

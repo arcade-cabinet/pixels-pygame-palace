@@ -1,7 +1,7 @@
-// Global test setup for Vitest
-import { expect, afterEach, beforeEach, vi } from 'vitest';
-import { cleanup } from '@testing-library/react';
 import * as matchers from '@testing-library/jest-dom/matchers';
+import { cleanup } from '@testing-library/react';
+// Global test setup for Vitest
+import { afterEach, beforeEach, expect, vi } from 'vitest';
 
 // Extend Vitest's expect with jest-dom matchers
 expect.extend(matchers);
@@ -15,10 +15,10 @@ afterEach(() => {
   localStorage.clear();
   sessionStorage.clear();
   // Clear all cookies
-  document.cookie.split(";").forEach((c) => {
+  document.cookie.split(';').forEach((c) => {
     document.cookie = c
-      .replace(/^ +/, "")
-      .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+      .replace(/^ +/, '')
+      .replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/');
   });
 });
 
@@ -64,14 +64,14 @@ beforeEach(() => {
     if (
       typeof message === 'string' &&
       (message.includes('ReactDOM.render') ||
-       message.includes('unmounted component') ||
-       message.includes('not wrapped in act'))
+        message.includes('unmounted component') ||
+        message.includes('not wrapped in act'))
     ) {
       return;
     }
     originalError(message, ...args);
   });
-  
+
   console.warn = vi.fn((message, ...args) => {
     // Suppress specific warnings if needed
     originalWarn(message, ...args);

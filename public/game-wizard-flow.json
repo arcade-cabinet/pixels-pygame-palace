@@ -19,7 +19,7 @@
       }
     ]
   },
-  
+
   "about-games": {
     "id": "about-games",
     "text": "Game development is like digital storytelling with interaction!",
@@ -35,7 +35,7 @@
       }
     ]
   },
-  
+
   "choose-character": {
     "id": "choose-character",
     "text": "First, let's choose your main character! Who will be the hero of your game?",
@@ -93,7 +93,7 @@
       }
     ]
   },
-  
+
   "choose-enemy": {
     "id": "choose-enemy",
     "text": "Every hero needs a challenge! What kind of enemies should your character face?",
@@ -151,7 +151,7 @@
       }
     ]
   },
-  
+
   "choose-collectible": {
     "id": "choose-collectible",
     "text": "What treasures should players collect in your game?",
@@ -206,7 +206,7 @@
       }
     ]
   },
-  
+
   "choose-background": {
     "id": "choose-background",
     "text": "Where does your adventure take place?",
@@ -261,7 +261,7 @@
       }
     ]
   },
-  
+
   "choose-mechanic": {
     "id": "choose-mechanic",
     "text": "Let's add a special power to make your game unique!",
@@ -315,7 +315,7 @@
       }
     ]
   },
-  
+
   "choose-rule": {
     "id": "choose-rule",
     "text": "What's the main goal of your game?",
@@ -367,7 +367,7 @@
       }
     ]
   },
-  
+
   "game-complete": {
     "id": "game-complete",
     "text": "🎉 Amazing! You've created your very own game!",
@@ -405,7 +405,7 @@
       }
     ]
   },
-  
+
   "play-mode": {
     "id": "play-mode",
     "text": "Time to play your creation! Use the controls below:",
@@ -418,11 +418,7 @@
     "showLivePreview": {
       "enabled": true,
       "previewType": "comparison",
-      "pixelComments": [
-        "You're doing great!",
-        "Nice moves!",
-        "Keep going!"
-      ],
+      "pixelComments": ["You're doing great!", "Nice moves!", "Keep going!"],
       "autoPlay": true
     },
     "options": [
@@ -432,7 +428,7 @@
       }
     ]
   },
-  
+
   "export-game": {
     "id": "export-game",
     "text": "Your game is ready to share with the world!",
@@ -452,7 +448,7 @@
       }
     ]
   },
-  
+
   "download-complete": {
     "id": "download-complete",
     "text": "Your game has been downloaded! 🎊",
