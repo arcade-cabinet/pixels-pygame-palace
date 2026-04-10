@@ -1,6 +1,6 @@
-import { defineConfig } from 'vitest/config';
-import react from '@vitejs/plugin-react';
 import path from 'path';
+import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   plugins: [react()],
@@ -20,7 +20,7 @@ export default defineConfig({
       // Exclude e2e tests
       '**/tests/e2e/**',
       '**/*.e2e.test.{ts,tsx}',
-      '**/*.integration.test.{ts,tsx}'
+      '**/*.integration.test.{ts,tsx}',
     ].filter(Boolean),
     coverage: {
       provider: 'v8',
@@ -28,7 +28,7 @@ export default defineConfig({
       reportsDirectory: './coverage',
       exclude: [
         'node_modules/',
-        'dist/', 
+        'dist/',
         'tests/',
         '*.config.ts',
         '*.config.js',
@@ -39,25 +39,23 @@ export default defineConfig({
         '**/tests/integration/**',
         '**/tests/e2e/**',
         '**/*.integration.test.{ts,tsx}',
-        '**/*.e2e.test.{ts,tsx}'
+        '**/*.e2e.test.{ts,tsx}',
       ],
-      include: [
-        'client/src/**/*.{ts,tsx}'
-      ],
+      include: ['client/src/**/*.{ts,tsx}'],
       thresholds: {
         lines: 90,
         functions: 90,
         branches: 85,
-        statements: 90
-      }
+        statements: 90,
+      },
     },
     // Run tests in parallel for better performance
     pool: 'threads',
     poolOptions: {
       threads: {
-        singleThread: false
-      }
-    }
+        singleThread: false,
+      },
+    },
   },
   resolve: {
     alias: {
@@ -67,10 +65,10 @@ export default defineConfig({
       '@/lib': path.resolve(__dirname, './client/src/lib'),
       '@/hooks': path.resolve(__dirname, './client/src/hooks'),
       '@/pages': path.resolve(__dirname, './client/src/pages'),
-      '@assets': path.resolve(__dirname, './attached_assets')
-    }
+      '@assets': path.resolve(__dirname, './attached_assets'),
+    },
   },
   esbuild: {
-    jsx: 'automatic'
-  }
+    jsx: 'automatic',
+  },
 });

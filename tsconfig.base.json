@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "strict": true,
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "allowImportingTsExtensions": true,
+    "paths": {
+      "@professor-pixel/types": ["./packages/types/src"],
+      "@professor-pixel/types/*": ["./packages/types/src/*"],
+      "@professor-pixel/config": ["./packages/config/src"],
+      "@professor-pixel/config/*": ["./packages/config/src/*"],
+      "@professor-pixel/core": ["./packages/core/src"],
+      "@professor-pixel/core/*": ["./packages/core/src/*"],
+      "@professor-pixel/python-sandbox": ["./packages/python-sandbox/src"],
+      "@professor-pixel/python-sandbox/*": ["./packages/python-sandbox/src/*"],
+      "@professor-pixel/lesson-engine": ["./packages/lesson-engine/src"],
+      "@professor-pixel/lesson-engine/*": ["./packages/lesson-engine/src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "build"]
+}

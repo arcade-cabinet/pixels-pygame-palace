@@ -23,7 +23,12 @@
           "description": "Let's start by displaying messages on screen. The print() function is used to show text output. Write any friendly greeting messages!",
           "initialCode": "# Use the print() function to display at least 2 messages\\n# You can write any greeting or welcome messages you like!\\n",
           "solution": "print('Hello, World!')\\nprint('Welcome to Python programming!')",
-          "hints": ["Use print() function to display text", "Put text inside quotes", "You can write any messages you want", "Try using at least 2 print statements"],
+          "hints": [
+            "Use print() function to display text",
+            "Put text inside quotes",
+            "You can write any messages you want",
+            "Try using at least 2 print statements"
+          ],
           "tests": [
             {
               "mode": "rules",
@@ -43,12 +48,18 @@
           ]
         },
         {
-          "id": "step-2", 
+          "id": "step-2",
           "title": "Creating Variables",
           "description": "Variables store data that your program can use later. Create variables to store different types of information, then display them!",
           "initialCode": "# Create at least 3 variables with different data types:\\n# - A string (text in quotes)\\n# - A number (integer or decimal)\\n# - A boolean (True or False)\\n# Then print each variable to see their values\\n",
           "solution": "name = 'Python'\\nversion = 3.12\\nis_fun = True\\n\\nprint(name)\\nprint(version)\\nprint(is_fun)",
-          "hints": ["Variables store values using =", "Strings use quotes like 'text' or \"text\"", "Numbers don't need quotes", "Boolean values are True or False", "Use print() to display variables"],
+          "hints": [
+            "Variables store values using =",
+            "Strings use quotes like 'text' or \"text\"",
+            "Numbers don't need quotes",
+            "Boolean values are True or False",
+            "Use print() to display variables"
+          ],
           "tests": [
             {
               "mode": "rules",
@@ -98,7 +109,11 @@
           "description": "Use an if statement to check a condition and only run code when the condition is true.",
           "initialCode": "# Create a variable called score and set it to 85\\n# Use an if statement to check if score is greater than 80\\n# If true, print 'Great job!'\\n",
           "solution": "score = 85\\nif score > 80:\\n    print('Great job!')",
-          "hints": ["Use if followed by a condition and colon :", "Indent the code inside the if block", "Use > to check if one number is greater than another"],
+          "hints": [
+            "Use if followed by a condition and colon :",
+            "Indent the code inside the if block",
+            "Use > to check if one number is greater than another"
+          ],
           "tests": [
             {
               "mode": "rules",

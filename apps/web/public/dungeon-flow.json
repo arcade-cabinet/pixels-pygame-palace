@@ -1,0 +1,572 @@
+{
+  "start": {
+    "id": "start",
+    "speaker": "Pixel",
+    "text": "A DUNGEON CRAWLER awaits! Let's craft your dark adventure with meaningful choices that shape your underground world. First, let's set the atmosphere!",
+    "followUp": "Every choice will bundle matching assets and mechanics. Choose your dungeon's atmosphere!",
+    "action": "showComponentChoice",
+    "actionParams": {
+      "componentId": "dungeonAtmosphere",
+      "category": "theme"
+    },
+    "options": [
+      {
+        "text": "A: Dark Atmospheric - Gothic horror, torch-lit corridors, ominous shadows",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "dungeonAtmosphere",
+          "variant": "A",
+          "bundle": ["dark_bg", "stone_tiles", "horror_music", "torch_system"]
+        },
+        "next": "projectSetup"
+      },
+      {
+        "text": "B: Bright Adventure - Colorful ruins, magical crystals, heroic exploration",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "dungeonAtmosphere",
+          "variant": "B",
+          "bundle": ["bright_bg", "crystal_tiles", "adventure_music", "crystal_light"]
+        },
+        "next": "projectSetup"
+      }
+    ]
+  },
+
+  "projectSetup": {
+    "id": "projectSetup",
+    "speaker": "Pixel",
+    "text": "Great atmosphere! Now let's name your dungeon crawler. What title will strike fear into adventurers' hearts?",
+    "options": [
+      {
+        "text": "A: Let me type my own game name",
+        "action": "promptGameName",
+        "next": "dungeonTheme"
+      },
+      {
+        "text": "B: Generate a dark and mysterious name",
+        "action": "generateGameName",
+        "actionParams": { "gameType": "dungeon" },
+        "next": "dungeonTheme"
+      }
+    ]
+  },
+
+  "dungeonTheme": {
+    "id": "dungeonTheme",
+    "speaker": "Pixel",
+    "text": "STAGE 1: Setting! What kind of dungeon are we exploring?",
+    "action": "showComponentChoice",
+    "actionParams": {
+      "componentId": "dungeonType",
+      "category": "environment"
+    },
+    "options": [
+      {
+        "text": "A: Ancient Ruins - Stone temples, mystical traps, forgotten treasures",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "dungeonType",
+          "variant": "A",
+          "bundle": ["ancient_walls", "rune_doors", "temple_props", "mystical_fx"]
+        },
+        "next": "titleScreen"
+      },
+      {
+        "text": "B: Modern Facility - Metal corridors, high-tech security, experimental horrors",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "dungeonType",
+          "variant": "B",
+          "bundle": ["metal_walls", "keycard_doors", "tech_props", "electric_fx"]
+        },
+        "next": "titleScreen"
+      }
+    ]
+  },
+
+  "titleScreen": {
+    "id": "titleScreen",
+    "speaker": "Pixel",
+    "text": "How should your title screen present the dungeon entrance?",
+    "action": "showComponentChoice",
+    "actionParams": {
+      "componentId": "titlePresentation",
+      "category": "ui"
+    },
+    "options": [
+      {
+        "text": "A: Animated Entrance - Camera descends into dungeon depths",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "titlePresentation",
+          "variant": "A",
+          "bundle": ["camera_descent", "depth_fog", "entrance_anim"]
+        },
+        "next": "menuStyle"
+      },
+      {
+        "text": "B: Static Gate - Imposing dungeon door with ambient effects",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "titlePresentation",
+          "variant": "B",
+          "bundle": ["gate_image", "torch_flicker", "ambient_particles"]
+        },
+        "next": "menuStyle"
+      }
+    ]
+  },
+
+  "menuStyle": {
+    "id": "menuStyle",
+    "speaker": "Pixel",
+    "text": "What style should the main menu have?",
+    "action": "showComponentChoice",
+    "actionParams": {
+      "componentId": "menuDesign",
+      "category": "ui"
+    },
+    "options": [
+      {
+        "text": "A: Stone Tablet - Carved menu options on ancient stone",
+        "action": "selectComponentVariant",
+        "actionParams": { "componentId": "menuDesign", "variant": "A" },
+        "next": "explorationView"
+      },
+      {
+        "text": "B: Map Interface - Dungeon blueprint with glowing selections",
+        "action": "selectComponentVariant",
+        "actionParams": { "componentId": "menuDesign", "variant": "B" },
+        "next": "explorationView"
+      }
+    ]
+  },
+
+  "explorationView": {
+    "id": "explorationView",
+    "speaker": "Pixel",
+    "text": "STAGE 2: Core Mechanics! How should players view the dungeon?",
+    "action": "showComponentChoice",
+    "actionParams": {
+      "componentId": "cameraView",
+      "category": "exploration"
+    },
+    "options": [
+      {
+        "text": "A: Top-Down View - Classic dungeon crawler perspective",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "cameraView",
+          "variant": "A",
+          "bundle": ["topdown_camera", "room_reveal", "minimap"]
+        },
+        "next": "movementSystem"
+      },
+      {
+        "text": "B: First-Person View - Immersive corridor exploration",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "cameraView",
+          "variant": "B",
+          "bundle": ["fps_camera", "wall_textures", "compass"]
+        },
+        "next": "movementSystem"
+      }
+    ]
+  },
+
+  "movementSystem": {
+    "id": "movementSystem",
+    "speaker": "Pixel",
+    "text": "How should dungeon movement work?",
+    "action": "showComponentChoice",
+    "actionParams": {
+      "componentId": "movement",
+      "category": "exploration"
+    },
+    "options": [
+      {
+        "text": "A: Grid-Based - Strategic tile-by-tile movement",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "movement",
+          "variant": "A",
+          "bundle": ["grid_movement", "turn_based", "tile_highlight"]
+        },
+        "next": "combatSystem"
+      },
+      {
+        "text": "B: Free Movement - Smooth real-time exploration",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "movement",
+          "variant": "B",
+          "bundle": ["free_movement", "collision", "sprint_system"]
+        },
+        "next": "combatSystem"
+      }
+    ]
+  },
+
+  "combatSystem": {
+    "id": "combatSystem",
+    "speaker": "Pixel",
+    "text": "STAGE 3: Combat! How should battles play out?",
+    "action": "showComponentChoice",
+    "actionParams": {
+      "componentId": "combat",
+      "category": "gameplay"
+    },
+    "options": [
+      {
+        "text": "A: Real-Time Combat - Hack and slash action",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "combat",
+          "variant": "A",
+          "bundle": ["melee_combat", "dodge_roll", "combo_system"]
+        },
+        "next": "enemyTypes"
+      },
+      {
+        "text": "B: Turn-Based Combat - Strategic tactical battles",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "combat",
+          "variant": "B",
+          "bundle": ["turn_combat", "action_points", "skill_menu"]
+        },
+        "next": "enemyTypes"
+      }
+    ]
+  },
+
+  "enemyTypes": {
+    "id": "enemyTypes",
+    "speaker": "Pixel",
+    "text": "What dangers lurk in the dungeon?",
+    "action": "showComponentChoice",
+    "actionParams": {
+      "componentId": "enemies",
+      "category": "gameplay"
+    },
+    "options": [
+      {
+        "text": "A: Living Monsters - Skeletons, slimes, goblins, and beasts",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "enemies",
+          "variant": "A",
+          "bundle": ["monster_sprites", "creature_ai", "growl_sounds"]
+        },
+        "next": "lootSystem"
+      },
+      {
+        "text": "B: Deadly Traps - Spikes, arrows, crushing walls, and puzzles",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "enemies",
+          "variant": "B",
+          "bundle": ["trap_sprites", "trigger_system", "mechanism_sounds"]
+        },
+        "next": "lootSystem"
+      }
+    ]
+  },
+
+  "lootSystem": {
+    "id": "lootSystem",
+    "speaker": "Pixel",
+    "text": "STAGE 4: Rewards! How should treasure work?",
+    "action": "showComponentChoice",
+    "actionParams": {
+      "componentId": "loot",
+      "category": "items"
+    },
+    "options": [
+      {
+        "text": "A: Random Drops - Procedural loot with rarity tiers",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "loot",
+          "variant": "A",
+          "bundle": ["loot_tables", "rarity_colors", "drop_particles"]
+        },
+        "next": "inventoryManagement"
+      },
+      {
+        "text": "B: Fixed Treasures - Handcrafted rewards in specific locations",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "loot",
+          "variant": "B",
+          "bundle": ["treasure_chests", "key_items", "unique_weapons"]
+        },
+        "next": "inventoryManagement"
+      }
+    ]
+  },
+
+  "inventoryManagement": {
+    "id": "inventoryManagement",
+    "speaker": "Pixel",
+    "text": "How should players manage their items?",
+    "action": "showComponentChoice",
+    "actionParams": {
+      "componentId": "inventory",
+      "category": "items"
+    },
+    "options": [
+      {
+        "text": "A: Grid Inventory - Limited space, item tetris management",
+        "action": "selectComponentVariant",
+        "actionParams": { "componentId": "inventory", "variant": "A" },
+        "next": "mapGeneration"
+      },
+      {
+        "text": "B: List Inventory - Categorized items with weight limits",
+        "action": "selectComponentVariant",
+        "actionParams": { "componentId": "inventory", "variant": "B" },
+        "next": "mapGeneration"
+      }
+    ]
+  },
+
+  "mapGeneration": {
+    "id": "mapGeneration",
+    "speaker": "Pixel",
+    "text": "STAGE 5: World Design! How should dungeon layouts be created?",
+    "action": "showComponentChoice",
+    "actionParams": {
+      "componentId": "mapGen",
+      "category": "world"
+    },
+    "options": [
+      {
+        "text": "A: Procedural Generation - Unique dungeon every playthrough",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "mapGen",
+          "variant": "A",
+          "bundle": ["room_generator", "corridor_logic", "random_spawns"]
+        },
+        "next": "lightingSystem"
+      },
+      {
+        "text": "B: Handcrafted Levels - Designed challenges and secrets",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "mapGen",
+          "variant": "B",
+          "bundle": ["level_templates", "secret_rooms", "puzzle_layouts"]
+        },
+        "next": "lightingSystem"
+      }
+    ]
+  },
+
+  "lightingSystem": {
+    "id": "lightingSystem",
+    "speaker": "Pixel",
+    "text": "How should darkness and visibility work?",
+    "action": "showComponentChoice",
+    "actionParams": {
+      "componentId": "lighting",
+      "category": "world"
+    },
+    "options": [
+      {
+        "text": "A: Torch Mechanics - Limited light radius, manage torches",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "lighting",
+          "variant": "A",
+          "bundle": ["torch_system", "light_radius", "darkness_fog"]
+        },
+        "next": "bossEncounter"
+      },
+      {
+        "text": "B: Always Visible - Full room visibility for strategic play",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "lighting",
+          "variant": "B",
+          "bundle": ["full_visibility", "room_lighting", "ambient_glow"]
+        },
+        "next": "bossEncounter"
+      }
+    ]
+  },
+
+  "bossEncounter": {
+    "id": "bossEncounter",
+    "speaker": "Pixel",
+    "text": "STAGE 6: Boss Battle! What kind of dungeon lord awaits?",
+    "action": "showComponentChoice",
+    "actionParams": {
+      "componentId": "bossType",
+      "category": "boss"
+    },
+    "options": [
+      {
+        "text": "A: Puzzle Boss - Defeat through wit and environment",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "bossType",
+          "variant": "A",
+          "bundle": ["puzzle_boss", "mechanism_phases", "environmental_damage"]
+        },
+        "next": "bossArena"
+      },
+      {
+        "text": "B: Combat Boss - Epic battle with attack patterns",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "bossType",
+          "variant": "B",
+          "bundle": ["combat_boss", "phase_system", "attack_patterns"]
+        },
+        "next": "bossArena"
+      }
+    ]
+  },
+
+  "bossArena": {
+    "id": "bossArena",
+    "speaker": "Pixel",
+    "text": "Where should the boss fight take place?",
+    "action": "showComponentChoice",
+    "actionParams": {
+      "componentId": "bossRoom",
+      "category": "boss"
+    },
+    "options": [
+      {
+        "text": "A: Grand Chamber - Large arena with pillars and platforms",
+        "action": "selectComponentVariant",
+        "actionParams": { "componentId": "bossRoom", "variant": "A" },
+        "next": "deathMechanics"
+      },
+      {
+        "text": "B: Narrow Corridor - Claustrophobic chase sequence",
+        "action": "selectComponentVariant",
+        "actionParams": { "componentId": "bossRoom", "variant": "B" },
+        "next": "deathMechanics"
+      }
+    ]
+  },
+
+  "deathMechanics": {
+    "id": "deathMechanics",
+    "speaker": "Pixel",
+    "text": "STAGE 7: Challenge! What happens when the hero falls?",
+    "action": "showComponentChoice",
+    "actionParams": {
+      "componentId": "deathSystem",
+      "category": "gameplay"
+    },
+    "options": [
+      {
+        "text": "A: Permadeath - One life, high stakes, roguelike tension",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "deathSystem",
+          "variant": "A",
+          "bundle": ["permadeath", "meta_progression", "death_stats"]
+        },
+        "next": "endGame"
+      },
+      {
+        "text": "B: Checkpoints - Respawn at campfires and save points",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "deathSystem",
+          "variant": "B",
+          "bundle": ["checkpoint_system", "campfire_saves", "respawn_fx"]
+        },
+        "next": "endGame"
+      }
+    ]
+  },
+
+  "endGame": {
+    "id": "endGame",
+    "speaker": "Pixel",
+    "text": "STAGE 8: Victory! How should the adventure conclude?",
+    "action": "showComponentChoice",
+    "actionParams": {
+      "componentId": "ending",
+      "category": "finale"
+    },
+    "options": [
+      {
+        "text": "A: Escape Sequence - Timer countdown, collapsing dungeon",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "ending",
+          "variant": "A",
+          "bundle": ["escape_timer", "falling_debris", "urgent_music"]
+        },
+        "next": "victoryScreen"
+      },
+      {
+        "text": "B: Treasure Chamber - Claim the ultimate prize peacefully",
+        "action": "selectComponentVariant",
+        "actionParams": {
+          "componentId": "ending",
+          "variant": "B",
+          "bundle": ["treasure_room", "gold_piles", "victory_fanfare"]
+        },
+        "next": "victoryScreen"
+      }
+    ]
+  },
+
+  "victoryScreen": {
+    "id": "victoryScreen",
+    "speaker": "Pixel",
+    "text": "How should we celebrate the hero's triumph?",
+    "action": "showComponentChoice",
+    "actionParams": {
+      "componentId": "victory",
+      "category": "finale"
+    },
+    "options": [
+      {
+        "text": "A: Stats Summary - Show floors cleared, treasures found, enemies defeated",
+        "action": "selectComponentVariant",
+        "actionParams": { "componentId": "victory", "variant": "A" },
+        "next": "complete"
+      },
+      {
+        "text": "B: Cinematic Ending - Hero emerges into sunlight with treasure",
+        "action": "selectComponentVariant",
+        "actionParams": { "componentId": "victory", "variant": "B" },
+        "next": "complete"
+      }
+    ]
+  },
+
+  "complete": {
+    "id": "complete",
+    "speaker": "Pixel",
+    "text": "⚔️ LEGENDARY! Your dungeon crawler is complete with all 8 stages perfectly crafted!",
+    "followUp": "Atmosphere ✓ Theme ✓ Exploration ✓ Combat ✓ Loot ✓ World ✓ Boss ✓ Victory ✓ Every choice shapes your unique dungeon adventure!",
+    "action": "compileFullGame",
+    "options": [
+      {
+        "text": "Enter the dungeon!",
+        "action": "launchPyodideGame"
+      },
+      {
+        "text": "Export as Python file",
+        "action": "exportPyodideGame"
+      },
+      {
+        "text": "Open in Pro Editor",
+        "action": "openWYSIWYGEditor"
+      }
+    ]
+  }
+}

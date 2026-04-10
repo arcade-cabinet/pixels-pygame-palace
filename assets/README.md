@@ -1,3 +1,10 @@
+---
+title: Assets
+updated: 2026-04-09
+status: current
+domain: technical
+---
+
 # Pixel's PyGame Palace Assets Directory
 
 This directory contains all game assets tracked by Git LFS for efficient storage.

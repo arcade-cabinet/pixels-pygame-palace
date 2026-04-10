@@ -1,0 +1,22 @@
+{
+  "name": "@professor-pixel/lesson-engine",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "dependencies": {
+    "@professor-pixel/types": "workspace:*",
+    "@professor-pixel/config": "workspace:*",
+    "@professor-pixel/core": "workspace:*",
+    "@professor-pixel/python-sandbox": "workspace:*",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "typescript": "^5.9.3"
+  }
+}

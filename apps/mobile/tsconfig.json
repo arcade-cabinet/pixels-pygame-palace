@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2022"],
+    "jsx": "react-native"
+  },
+  "include": ["src/**/*", "app/**/*"],
+  "exclude": ["node_modules"],
+  "references": [
+    { "path": "../../packages/types" },
+    { "path": "../../packages/config" },
+    { "path": "../../packages/core" },
+    { "path": "../../packages/python-sandbox" },
+    { "path": "../../packages/lesson-engine" }
+  ]
+}
